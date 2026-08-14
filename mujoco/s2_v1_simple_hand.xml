@@ -134,25 +134,25 @@
                           <geom type="mesh" mesh="L_sixforce_link" rgba="0.65 0.28 0.82 1" contype="0" conaffinity="0" group="1" density="0" />
                           <geom type="mesh" mesh="L_sixforce_link" rgba="0.65 0.28 0.82 1" density="0" />
                           <body name="L_hand_base_link" pos="0.00449793685535 0.00194909964822 -0.000588334162375" quat="0.0025749395177 6.27130518888e-06 0.999993697096 0.00244446619558">
-                            <inertial mass="0.0001" pos="0 0 0" diaginertia="1e-8 1e-8 1e-8" />
+                            <inertial mass="0.169970" pos="0 0 0" diaginertia="1e-8 1e-8 1e-8" />
                             <geom type="mesh" mesh="L_hand_base_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                             <geom type="mesh" mesh="L_hand_base_link" rgba="0.22 0.40 0.65 1" density="0" />
                             <body name="L_palm_link">
-                              <inertial mass="0.0001" pos="0 0 0" diaginertia="1e-8 1e-8 1e-8" />
+                              <inertial mass="0.44979018" pos="0 0 0" diaginertia="1e-8 1e-8 1e-8" />
                               <geom type="mesh" mesh="L_palm_link" rgba="0.22 0.40 0.65 1" pos="0.000357 -0.013196 0.099778" quat="0.500000013393 0.499999986599 -0.499998 0.500002" contype="0" conaffinity="0" group="1" density="0" />
                               <geom type="mesh" mesh="L_palm_link" rgba="0.22 0.40 0.65 1" pos="0.000357 -0.013196 0.099778" quat="0.500000013393 0.499999986599 -0.499998 0.500002" density="0" />
                               <body name="L_thumb_cmp_link" pos="-0.0286001 -0.0058313 0.0511999" quat="2.75985732713e-06 -0.367316073761 0.93009617887 3.62269051927e-07">
-                                <inertial mass="0.0151103" pos="0.0056308 -0.00075 -0.0043585" quat="0.105013002467 0.895844046938 0.0102631840475 0.431660028185" diaginertia="1.3e-06 1.1e-06 7e-07" />
+                                <inertial mass="0.01405089" pos="0.0056308 -0.00075 -0.0043585" quat="0.105013002467 0.895844046938 0.0102631840475 0.431660028185" diaginertia="1.3e-06 1.1e-06 7e-07" />
                                 <joint name="L_thumb_cmp_joint" type="hinge" axis="0 0 1" range="-0.96 0" actuatorfrcrange="-0.704 0.704" />
                                 <geom type="mesh" mesh="L_thumb_cmp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="L_thumb_cmp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="L_thumb_mpp_link" pos="0.012 -0.0010557 -0.010045" quat="0.669137027817 -0.743139043521 0 0">
-                                  <inertial mass="0.067412" pos="0.0361842 -0.0019502 -7.7e-05" quat="0.475779686543 0.473460718164 0.525734654097 0.522562639031" diaginertia="3.32e-05 3.27e-05 6.1e-06" />
+                                  <inertial mass="0.09019498" pos="0.0361842 -0.0019502 -7.7e-05" quat="0.475779686543 0.473460718164 0.525734654097 0.522562639031" diaginertia="3.32e-05 3.27e-05 6.1e-06" />
                                   <joint name="L_thumb_mpp_joint" type="hinge" axis="0 0 1" range="0 1.04" actuatorfrcrange="-0.632 0.632" />
                                   <geom type="mesh" mesh="L_thumb_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="L_thumb_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                   <body name="L_thumb_ip_link" pos="0.075 -1.16e-05 0">
-                                    <inertial mass="0.0173112" pos="0.0135371 0.0041693 6.1e-06" quat="0.453754904606 0.453754892448 0.542315852785 0.542315867317" diaginertia="1.9e-06 1.8e-06 1e-06" />
+                                    <inertial mass="0.01901012" pos="0.0135371 0.0041693 6.1e-06" quat="0.453754904606 0.453754892448 0.542315852785 0.542315867317" diaginertia="1.9e-06 1.8e-06 1e-06" />
                                     <joint name="L_thumb_ip_joint" type="hinge" axis="0 0 1" range="0 1.05" actuatorfrcrange="-0.182 0.182" />
                                     <geom type="mesh" mesh="L_thumb_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                     <geom type="mesh" mesh="L_thumb_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
@@ -160,48 +160,48 @@
                                 </body>
                               </body>
                               <body name="L_index_mpp_link" pos="-0.0304135 -0.0015001 0.141595" quat="0.064610685796 -0.69710383733 0.063321309062 -0.711239840757">
-                                <inertial mass="0.0147008" pos="0.0152531 -0.0018168 0.0001521" quat="0.500000013397 0.5 0.499999986603 0.5" diaginertia="3.6e-06 3.5e-06 9e-07" />
-                                <joint name="L_index_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-0.583 0.583" />
+                                <inertial mass="0.02481999" pos="0.0152531 -0.0018168 0.0001521" quat="0.500000013397 0.5 0.499999986603 0.5" diaginertia="3.6e-06 3.5e-06 9e-07" />
+                                <joint name="L_index_mpp_joint" type="hinge" axis="0 0 1" range="0 1.6685" actuatorfrcrange="-0.583 0.583" />
                                 <geom type="mesh" mesh="L_index_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="L_index_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="L_index_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881">
-                                  <inertial mass="0.0133493" pos="0.0168086 -0.0011753 0" quat="0.46676313095 0.466763118443 0.531161159973 0.531161174205" diaginertia="2.7e-06 2.6e-06 4e-07" />
+                                  <inertial mass="0.01962738" pos="0.0168086 -0.0011753 0" quat="0.46676313095 0.466763118443 0.531161159973 0.531161174205" diaginertia="2.7e-06 2.6e-06 4e-07" />
                                   <joint name="L_index_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-0.311 0.311" />
                                   <geom type="mesh" mesh="L_index_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="L_index_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 </body>
                               </body>
                               <body name="L_middle_mpp_link" pos="-0.0100005 -0.0015 0.1418" quat="0.0639719293189 -0.704205814239 0.0639664691842 -0.704208814395">
-                                <inertial mass="0.0143021" pos="0.0147601 -0.0017148 0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
-                                <joint name="L_middle_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-0.604 0.604" />
+                                <inertial mass="0.02481999" pos="0.0147601 -0.0017148 0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
+                                <joint name="L_middle_mpp_joint" type="hinge" axis="0 0 1" range="0 1.6685" actuatorfrcrange="-0.604 0.604" />
                                 <geom type="mesh" mesh="L_middle_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="L_middle_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="L_middle_ip_link" pos="0.0388 0 0" quat="0.999981801511 0 0 -0.00603296340279">
-                                  <inertial mass="0.0148881" pos="0.0177132 -0.0010967 2.56e-05" quat="0.467725756249 0.467725743716 0.530313695154 0.530313709363" diaginertia="3.5e-06 3.4e-06 4e-07" />
+                                  <inertial mass="0.01962738" pos="0.0177132 -0.0010967 2.56e-05" quat="0.467725756249 0.467725743716 0.530313695154 0.530313709363" diaginertia="3.5e-06 3.4e-06 4e-07" />
                                   <joint name="L_middle_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-0.332 0.332" />
                                   <geom type="mesh" mesh="L_middle_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="L_middle_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 </body>
                               </body>
                               <body name="L_ring_mpp_link" pos="0.0104125 -0.0015 0.141595" quat="0.0633268130056 -0.711237859545 0.0646052700496 -0.697105860675">
-                                <inertial mass="0.0143021" pos="0.0147595 -0.001715 0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
-                                <joint name="L_ring_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-0.583 0.583" />
+                                <inertial mass="0.02481999" pos="0.0147595 -0.001715 0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
+                                <joint name="L_ring_mpp_joint" type="hinge" axis="0 0 1" range="0 1.6685" actuatorfrcrange="-0.583 0.583" />
                                 <geom type="mesh" mesh="L_ring_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="L_ring_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="L_ring_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881">
-                                  <inertial mass="0.0137479" pos="0.0161543 -0.0013024 2.76e-05" quat="0.46521212295 0.465212110485 0.532520120616 0.532520134885" diaginertia="2.9e-06 2.8e-06 4e-07" />
+                                  <inertial mass="0.01962738" pos="0.0161543 -0.0013024 2.76e-05" quat="0.46521212295 0.465212110485 0.532520120616 0.532520134885" diaginertia="2.9e-06 2.8e-06 4e-07" />
                                   <joint name="L_ring_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-0.311 0.311" />
                                   <geom type="mesh" mesh="L_ring_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="L_ring_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 </body>
                               </body>
                               <body name="L_little_mpp_link" pos="0.0308175 -0.0014999 0.140981" quat="0.0626751858233 -0.718197991662 0.0652375268684 -0.689932990183">
-                                <inertial mass="0.0143021" pos="0.0147588 -0.0017151 0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
-                                <joint name="L_little_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-0.528 0.528" />
+                                <inertial mass="0.02481999" pos="0.0147588 -0.0017151 0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
+                                <joint name="L_little_mpp_joint" type="hinge" axis="0 0 1" range="0 1.6685" actuatorfrcrange="-0.528 0.528" />
                                 <geom type="mesh" mesh="L_little_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="L_little_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="L_little_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881">
-                                  <inertial mass="0.0117927" pos="0.0130333 -0.0014344 2.95e-05" quat="0.46016418404 0.46016417171 0.536888183588 0.536888197974" diaginertia="1.8e-06 1.8e-06 3e-07" />
+                                  <inertial mass="0.01658133" pos="0.0130333 -0.0014344 2.95e-05" quat="0.46016418404 0.46016417171 0.536888183588 0.536888197974" diaginertia="1.8e-06 1.8e-06 3e-07" />
                                   <joint name="L_little_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-0.257 0.257" />
                                   <geom type="mesh" mesh="L_little_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="L_little_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
@@ -257,25 +257,25 @@
                           <geom type="mesh" mesh="R_sixforce_link" rgba="0.65 0.28 0.82 1" contype="0" conaffinity="0" group="1" density="0" />
                           <geom type="mesh" mesh="R_sixforce_link" rgba="0.65 0.28 0.82 1" density="0" />
                           <body name="R_hand_base_link" pos="-0.0022054 0.00192894317484 -0.00318463715174" quat="0.00243672109646 -0.999996714102 -0.000796344261871 -3.29052063867e-06">
-                            <inertial mass="0.0001" pos="0 0 0" diaginertia="1e-8 1e-8 1e-8" />
+                            <inertial mass="0.169970" pos="0 0 0" diaginertia="1e-8 1e-8 1e-8" />
                             <geom type="mesh" mesh="R_hand_base_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                             <geom type="mesh" mesh="R_hand_base_link" rgba="0.22 0.40 0.65 1" density="0" />
                             <body name="R_palm_link">
-                              <inertial mass="0.0001" pos="0 0 0" diaginertia="1e-8 1e-8 1e-8" />
+                              <inertial mass="0.44979018" pos="0 0 0" diaginertia="1e-8 1e-8 1e-8" />
                               <geom type="mesh" mesh="R_palm_link" rgba="0.22 0.40 0.65 1" pos="0.000357 -0.013196 0.099778" quat="0.500000013393 0.499999986599 -0.499998 0.500002" contype="0" conaffinity="0" group="1" density="0" />
                               <geom type="mesh" mesh="R_palm_link" rgba="0.22 0.40 0.65 1" pos="0.000357 -0.013196 0.099778" quat="0.500000013393 0.499999986599 -0.499998 0.500002" density="0" />
                               <body name="R_thumb_cmp_link" pos="0.0293132 -0.0058311 0.0512001" quat="1.6990970845e-06 -0.930097345755 0.367313119037 -6.71005731285e-07">
-                                <inertial mass="0.0151103" pos="0.0056308 0.00075 -0.0043585" quat="0.105013002467 -0.895844046938 0.0102631840475 -0.431660028185" diaginertia="1.3e-06 1.1e-06 7e-07" />
+                                <inertial mass="0.01405089" pos="0.0056308 0.00075 -0.0043585" quat="0.105013002467 -0.895844046938 0.0102631840475 -0.431660028185" diaginertia="1.3e-06 1.1e-06 7e-07" />
                                 <joint name="R_thumb_cmp_joint" type="hinge" axis="0 0 1" range="0 0.96" actuatorfrcrange="-0.704 0.704" />
                                 <geom type="mesh" mesh="R_thumb_cmp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="R_thumb_cmp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="R_thumb_mpp_link" pos="0.012 0.0010557 -0.010045" quat="0.743137151756 -0.669139124301 -5.18758476429e-05 -5.76100374828e-05">
-                                  <inertial mass="0.067412" pos="0.0361842 -0.0019502 7.7e-05" quat="0.473460707124 0.475779697529 0.52256265123 0.52573464197" diaginertia="3.32e-05 3.27e-05 6.1e-06" />
+                                  <inertial mass="0.09019498" pos="0.0361842 -0.0019502 7.7e-05" quat="0.473460707124 0.475779697529 0.52256265123 0.52573464197" diaginertia="3.32e-05 3.27e-05 6.1e-06" />
                                   <joint name="R_thumb_mpp_joint" type="hinge" axis="0 0 1" range="0 1.04" actuatorfrcrange="-0.632 0.632" />
                                   <geom type="mesh" mesh="R_thumb_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="R_thumb_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                   <body name="R_thumb_ip_link" pos="0.075 0 0" quat="0.999981753215 0 0 0.00604096325701">
-                                    <inertial mass="0.0173112" pos="0.0135371 0.0041693 -6.1e-06" quat="0.453754904606 0.453754892448 0.542315852785 0.542315867317" diaginertia="1.9e-06 1.8e-06 1e-06" />
+                                    <inertial mass="0.01901012" pos="0.0135371 0.0041693 -6.1e-06" quat="0.453754904606 0.453754892448 0.542315852785 0.542315867317" diaginertia="1.9e-06 1.8e-06 1e-06" />
                                     <joint name="R_thumb_ip_joint" type="hinge" axis="0 0 1" range="0 1.05" actuatorfrcrange="-0.182 0.182" />
                                     <geom type="mesh" mesh="R_thumb_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                     <geom type="mesh" mesh="R_thumb_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
@@ -283,48 +283,48 @@
                                 </body>
                               </body>
                               <body name="R_index_mpp_link" pos="0.0311268 -0.0014999 0.141596" quat="0.0633268130056 -0.711237859545 0.0646052700496 -0.697105860675">
-                                <inertial mass="0.0147008" pos="0.0152531 -0.0018168 -0.0001521" quat="0.500000013397 0.5 0.499999986603 0.5" diaginertia="3.6e-06 3.5e-06 9e-07" />
-                                <joint name="R_index_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-0.583 0.583" />
+                                <inertial mass="0.02481999" pos="0.0152531 -0.0018168 -0.0001521" quat="0.500000013397 0.5 0.499999986603 0.5" diaginertia="3.6e-06 3.5e-06 9e-07" />
+                                <joint name="R_index_mpp_joint" type="hinge" axis="0 0 1" range="0 1.6685" actuatorfrcrange="-0.583 0.583" />
                                 <geom type="mesh" mesh="R_index_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="R_index_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="R_index_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881">
-                                  <inertial mass="0.0133493" pos="0.0168086 -0.0011753 0" quat="0.46676313095 0.466763118443 0.531161159973 0.531161174205" diaginertia="2.7e-06 2.6e-06 4e-07" />
+                                  <inertial mass="0.01962738" pos="0.0168086 -0.0011753 0" quat="0.46676313095 0.466763118443 0.531161159973 0.531161174205" diaginertia="2.7e-06 2.6e-06 4e-07" />
                                   <joint name="R_index_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-0.311 0.311" />
                                   <geom type="mesh" mesh="R_index_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="R_index_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 </body>
                               </body>
                               <body name="R_middle_mpp_link" pos="0.0114638 -0.0015 0.1418" quat="0.0633637146392 -0.697357026356 0.0645643651776 -0.710992025419">
-                                <inertial mass="0.0143021" pos="0.0147601 -0.0017148 -0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
-                                <joint name="R_middle_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-0.604 0.604" />
+                                <inertial mass="0.02481999" pos="0.0147601 -0.0017148 -0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
+                                <joint name="R_middle_mpp_joint" type="hinge" axis="0 0 1" range="0 1.6685" actuatorfrcrange="-0.604 0.604" />
                                 <geom type="mesh" mesh="R_middle_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="R_middle_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="R_middle_ip_link" pos="0.038807 0 0" quat="0.99993497453 5.84026528067e-05 -0.00967737747351 -0.00603255058703">
-                                  <inertial mass="0.0148881" pos="0.0177132 -0.0010967 -2.56e-05" quat="0.467725756249 0.467725743716 0.530313695154 0.530313709363" diaginertia="3.5e-06 3.4e-06 4e-07" />
+                                  <inertial mass="0.01962738" pos="0.0177132 -0.0010967 -2.56e-05" quat="0.467725756249 0.467725743716 0.530313695154 0.530313709363" diaginertia="3.5e-06 3.4e-06 4e-07" />
                                   <joint name="R_middle_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-0.332 0.332" />
                                   <geom type="mesh" mesh="R_middle_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="R_middle_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 </body>
                               </body>
                               <body name="R_ring_mpp_link" pos="-0.0097002 -0.0015 0.141596" quat="0.064610685796 -0.69710383733 0.063321309062 -0.711239840757">
-                                <inertial mass="0.0143021" pos="0.0147595 -0.001715 -0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
-                                <joint name="R_ring_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-0.583 0.583" />
+                                <inertial mass="0.02481999" pos="0.0147595 -0.001715 -0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
+                                <joint name="R_ring_mpp_joint" type="hinge" axis="0 0 1" range="0 1.6685" actuatorfrcrange="-0.583 0.583" />
                                 <geom type="mesh" mesh="R_ring_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="R_ring_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="R_ring_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881">
-                                  <inertial mass="0.0137479" pos="0.0161543 -0.0013024 -2.76e-05" quat="0.46521212295 0.465212110485 0.532520120616 0.532520134885" diaginertia="2.9e-06 2.8e-06 4e-07" />
+                                  <inertial mass="0.01962738" pos="0.0161543 -0.0013024 -2.76e-05" quat="0.46521212295 0.465212110485 0.532520120616 0.532520134885" diaginertia="2.9e-06 2.8e-06 4e-07" />
                                   <joint name="R_ring_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-0.311 0.311" />
                                   <geom type="mesh" mesh="R_ring_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="R_ring_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 </body>
                               </body>
                               <body name="R_little_mpp_link" pos="-0.0301052 -0.0015001 0.140981" quat="0.0652429067348 -0.689930944004 0.0626697885765 -0.71819993959">
-                                <inertial mass="0.0143021" pos="0.0147588 -0.0017151 -0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
-                                <joint name="R_little_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-0.528 0.528" />
+                                <inertial mass="0.02481999" pos="0.0147588 -0.0017151 -0.0001287" quat="0.497085056903 0.497085043583 0.50289804737 0.502898060845" diaginertia="3.4e-06 3.4e-06 9e-07" />
+                                <joint name="R_little_mpp_joint" type="hinge" axis="0 0 1" range="0 1.6685" actuatorfrcrange="-0.528 0.528" />
                                 <geom type="mesh" mesh="R_little_mpp_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                 <geom type="mesh" mesh="R_little_mpp_link" rgba="0.22 0.40 0.65 1" density="0" />
                                 <body name="R_little_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881">
-                                  <inertial mass="0.0117927" pos="0.0130333 -0.0014344 -2.95e-05" quat="0.46016418404 0.46016417171 0.536888183588 0.536888197974" diaginertia="1.8e-06 1.8e-06 3e-07" />
+                                  <inertial mass="0.01658133" pos="0.0130333 -0.0014344 -2.95e-05" quat="0.46016418404 0.46016417171 0.536888183588 0.536888197974" diaginertia="1.8e-06 1.8e-06 3e-07" />
                                   <joint name="R_little_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-0.257 0.257" />
                                   <geom type="mesh" mesh="R_little_ip_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
                                   <geom type="mesh" mesh="R_little_ip_link" rgba="0.22 0.40 0.65 1" density="0" />
