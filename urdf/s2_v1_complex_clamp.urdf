@@ -768,7 +768,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://walker_s2_all/meshes/s2_v1_complex/L_hand_link.STL" />
+          filename="package://walker_s2_all/meshes/ee_clamp_complex/L_hand_link.STL" />
       </geometry>
       <material
         name="">
@@ -782,7 +782,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://walker_s2_all/meshes/s2_v1_complex/L_hand_link.STL" />
+          filename="package://walker_s2_all/meshes/ee_clamp_complex/L_hand_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -1280,7 +1280,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://walker_s2_all/meshes/s2_v1_complex/R_hand_link.STL" />
+          filename="package://walker_s2_all/meshes/ee_clamp_complex/R_hand_link.STL" />
       </geometry>
       <material
         name="">
@@ -1294,7 +1294,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://walker_s2_all/meshes/s2_v1_complex/R_hand_link.STL" />
+          filename="package://walker_s2_all/meshes/ee_clamp_complex/R_hand_link.STL" />
       </geometry>
     </collision>
   </link>

@@ -1906,7 +1906,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_gripper_base_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/L_gripper_base_link.STL" />
       </geometry>
       <material name="L_gripper_base_link_mat">
         <color rgba="0.79216078 0.81961176 0.93333725 1.00000000" />
@@ -1924,7 +1924,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/left_R_gripper_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/left_R_gripper_link.STL" />
       </geometry>
       <material name="left_R_gripper_link_mat">
         <color rgba="0.79216078 0.81961176 0.93333725 1.00000000" />
@@ -1933,7 +1933,7 @@
     <collision name="left_R_gripper_link_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/left_R_gripper_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/left_R_gripper_link.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -1948,7 +1948,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/left_L_gripper_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/left_L_gripper_link.STL" />
       </geometry>
       <material name="left_L_gripper_link_mat">
         <color rgba="1.00000000 1.00000000 1.00000000 1.00000000" />
@@ -1957,7 +1957,7 @@
     <collision name="left_L_gripper_link_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/left_L_gripper_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/left_L_gripper_link.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -1972,7 +1972,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_gripper_base_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/R_gripper_base_link.STL" />
       </geometry>
       <material name="R_gripper_base_link_mat">
         <color rgba="0.79216078 0.81961176 0.93333725 1.00000000" />
@@ -1990,7 +1990,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/right_R_gripper_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/right_R_gripper_link.STL" />
       </geometry>
       <material name="right_R_gripper_link_mat">
         <color rgba="0.79216078 0.81961176 0.93333725 1.00000000" />
@@ -1999,7 +1999,7 @@
     <collision name="right_R_gripper_link_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/right_R_gripper_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/right_R_gripper_link.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -2014,7 +2014,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/right_L_gripper_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/right_L_gripper_link.STL" />
       </geometry>
       <material name="right_L_gripper_link_mat">
         <color rgba="1.00000000 1.00000000 1.00000000 1.00000000" />
@@ -2023,7 +2023,7 @@
     <collision name="right_L_gripper_link_geom_0">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/right_L_gripper_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_gripper/right_L_gripper_link.STL" />
       </geometry>
     </collision>
     <inertial>

@@ -15,7 +15,7 @@
     <mesh name="L_wrist_pitch_link" content_type="model/stl" file="../meshes/s2_v1_simple/L_wrist_pitch_link.STL" />
     <mesh name="L_wrist_roll_link" content_type="model/stl" file="../meshes/s2_v1_simple/L_wrist_roll_link.STL" />
     <mesh name="L_sixforce_link" content_type="model/stl" file="../meshes/s2_v1_simple/L_sixforce_link.STL" />
-    <mesh name="L_hand_link" content_type="model/stl" file="../meshes/s2_v1_simple/L_hand_link.STL" />
+    <mesh name="L_hand_link" content_type="model/stl" file="../meshes/ee_clamp_simple/L_hand_link.STL" />
     <mesh name="R_shoulder_pitch_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_shoulder_pitch_link.STL" />
     <mesh name="R_shoulder_roll_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_shoulder_roll_link.STL" />
     <mesh name="R_shoulder_yaw_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_shoulder_yaw_link.STL" />
@@ -24,7 +24,7 @@
     <mesh name="R_wrist_pitch_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_wrist_pitch_link.STL" />
     <mesh name="R_wrist_roll_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_wrist_roll_link.STL" />
     <mesh name="R_sixforce_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_sixforce_link.STL" />
-    <mesh name="R_hand_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_hand_link.STL" />
+    <mesh name="R_hand_link" content_type="model/stl" file="../meshes/ee_clamp_simple/R_hand_link.STL" />
     <mesh name="R_hip_roll_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_hip_roll_link.STL" />
     <mesh name="R_hip_yaw_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_hip_yaw_link.STL" />
     <mesh name="R_hip_pitch_link" content_type="model/stl" file="../meshes/s2_v1_simple/R_hip_pitch_link.STL" />

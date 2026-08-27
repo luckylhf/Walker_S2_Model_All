@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<mujoco model="s2_v1_simple_gripper">
+<mujoco model="s2_v1_simple_hand_v3">
   <compiler angle="radian" meshdir="." boundmass="0.0001" />
   <asset>
     <mesh name="base_link" content_type="model/stl" file="../meshes/s2_v1_simple/base_link.STL" />
@@ -35,12 +35,32 @@
     <mesh name="L_knee_pitch_link" content_type="model/stl" file="../meshes/s2_v1_simple/L_knee_pitch_link.STL" />
     <mesh name="L_ankle_pitch_link" content_type="model/stl" file="../meshes/s2_v1_simple/L_ankle_pitch_link.STL" />
     <mesh name="L_ankle_roll_link" content_type="model/stl" file="../meshes/s2_v1_simple/L_ankle_roll_link.STL" />
-    <mesh name="L_gripper_base_link" content_type="model/stl" file="../meshes/ee_gripper/L_gripper_base_link.STL" />
-    <mesh name="left_R_gripper_link" content_type="model/stl" file="../meshes/ee_gripper/left_R_gripper_link.STL" />
-    <mesh name="left_L_gripper_link" content_type="model/stl" file="../meshes/ee_gripper/left_L_gripper_link.STL" />
-    <mesh name="R_gripper_base_link" content_type="model/stl" file="../meshes/ee_gripper/R_gripper_base_link.STL" />
-    <mesh name="right_R_gripper_link" content_type="model/stl" file="../meshes/ee_gripper/right_R_gripper_link.STL" />
-    <mesh name="right_L_gripper_link" content_type="model/stl" file="../meshes/ee_gripper/right_L_gripper_link.STL" />
+    <mesh name="L_hand_base_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_hand_base_link.STL" />
+    <mesh name="L_palm_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_palm_link.STL" />
+    <mesh name="L_thumb_cmp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_thumb_cmp_link.STL" />
+    <mesh name="L_thumb_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_thumb_mpp_link.STL" />
+    <mesh name="L_thumb_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_thumb_ip_link.STL" />
+    <mesh name="L_index_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_index_mpp_link.STL" />
+    <mesh name="L_index_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_index_ip_link.STL" />
+    <mesh name="L_middle_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_middle_mpp_link.STL" />
+    <mesh name="L_middle_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_middle_ip_link.STL" />
+    <mesh name="L_ring_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_ring_mpp_link.STL" />
+    <mesh name="L_ring_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_ring_ip_link.STL" />
+    <mesh name="L_little_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_little_mpp_link.STL" />
+    <mesh name="L_little_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/L_little_ip_link.STL" />
+    <mesh name="R_hand_base_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_hand_base_link.STL" />
+    <mesh name="R_palm_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_palm_link.STL" />
+    <mesh name="R_thumb_cmp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_thumb_cmp_link.STL" />
+    <mesh name="R_thumb_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_thumb_mpp_link.STL" />
+    <mesh name="R_thumb_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_thumb_ip_link.STL" />
+    <mesh name="R_index_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_index_mpp_link.STL" />
+    <mesh name="R_index_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_index_ip_link.STL" />
+    <mesh name="R_middle_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_middle_mpp_link.STL" />
+    <mesh name="R_middle_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_middle_ip_link.STL" />
+    <mesh name="R_ring_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_ring_mpp_link.STL" />
+    <mesh name="R_ring_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_ring_ip_link.STL" />
+    <mesh name="R_little_mpp_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_little_mpp_link.STL" />
+    <mesh name="R_little_ip_link" content_type="model/stl" file="../meshes/ee_hand_v3_simple/R_little_ip_link.STL" />
     <texture name="grid" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 .2 .3" width="512" height="512" />
     <material name="grid" texture="grid" texrepeat="5 5" reflectance="0.2" />
   </asset>
@@ -113,22 +133,7 @@
                           <inertial mass="0.2454096" pos="-0.00011076 3.22e-06 0.01133832" fullinertia="7.52e-05 9.35e-05 0.000106 0 -2.13e-06 0" />
                           <geom type="mesh" mesh="L_sixforce_link" rgba="0.65 0.28 0.82 1" contype="0" conaffinity="0" group="1" density="0" />
                           <geom type="mesh" mesh="L_sixforce_link" rgba="0.65 0.28 0.82 1" density="0" />
-                          <body name="L_gripper_base_link" pos="0.00444646508263 0.00190021049062 0.00941141385979" quat="9.22192385331e-05 0.707108057422 0.707096591285 0.0035492559849">
-                            <geom type="mesh" mesh="L_gripper_base_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
-                            <body name="left_R_gripper_link" pos="1.36e-05 0.024869 0.191">
-                              <inertial mass="0.014999" pos="0.0069838 -0.001397 -0.02379" quat="0.99017207943 0.0628827231877 0.105770984017 -0.0664643903247" diaginertia="2.3e-06 1.7e-06 1.3e-06" />
-                              <joint name="left_R_gripper_joint" type="slide" axis="0 1 0" range="-0.025 0" actuatorfrcrange="-140 140" />
-                              <geom type="mesh" mesh="left_R_gripper_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
-                              <geom type="mesh" mesh="left_R_gripper_link" rgba="0.22 0.40 0.65 1" density="0" />
-                            </body>
-                            <body name="left_L_gripper_link" pos="1.36e-05 -0.025131 0.191">
-                              <inertial mass="0.014999" pos="0.0069838 -0.001397 -0.02379" quat="0.99017207943 0.0628827231877 0.105770984017 -0.0664643903247" diaginertia="2.3e-06 1.7e-06 1.3e-06" />
-                              <joint name="left_L_gripper_joint" type="slide" axis="0 1 0" range="0 0.025" actuatorfrcrange="-140 140" />
-                              <geom type="mesh" mesh="left_L_gripper_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
-                              <geom type="mesh" mesh="left_L_gripper_link" rgba="0.22 0.40 0.65 1" density="0" />
-                            </body>
-                          </body>
-                        </body>
+                          <body name="L_hand_base_link" pos="0.00449793685535 0.00194909964822 -0.000588334162375" quat="0.0025749395177 6.27130518888e-06 0.999993697096 0.00244446619558"><inertial mass="0.0453429720209" pos="0.00065934 0.00064662 0.02223161" fullinertia="1.4904589372e-05 3.18691626409e-05 3.47167874396e-05 2.42351046699e-07 -3.72181964573e-07 -1.90418679549e-07" /><geom type="mesh" mesh="L_hand_base_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_hand_base_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="L_palm_link" pos="0.00035572 -0.013196 0.099778" quat="0.499998163397 0.499999999997 -0.499999999997 0.500001836603"><inertial mass="0.330838910024" pos="-0.00938866 -0.00221701 -0.0117814" fullinertia="0.000197109299517 0.000305267109501 0.000435790458937 -1.46276167472e-06 4.32769726248e-08 -1.13904991948e-05" /><geom type="mesh" mesh="L_palm_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_palm_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="L_thumb_cmp_link" pos="-0.048578 0.028956 -0.0073648" quat="0.648704606807 -0.281391172734 -0.648706674022 0.281391172734"><joint name="L_thumb_cmp_joint" type="hinge" axis="0 0 1" range="-0.96 0" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0130785867552" pos="0.00563085 -0.00075 -0.00435852" fullinertia="8.04951690821e-07 9.08816425121e-07 9.26127214171e-07 6.05877616747e-08 2.59661835749e-07 -1.73107890499e-08" /><geom type="mesh" mesh="L_thumb_cmp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_thumb_cmp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="L_thumb_mpp_link" pos="0.012 -0.0010557 -0.010045" quat="0.669136581933 -0.743139445003 0 0"><joint name="L_thumb_mpp_joint" type="hinge" axis="0 0 1" range="0 1.04" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0583477282609" pos="0.03618423 -0.00195018 -7.704e-05" fullinertia="5.5134863124e-06 2.85281803543e-05 2.82858293076e-05 -2.31099033816e-06 2.59661835749e-08 0" /><geom type="mesh" mesh="L_thumb_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_thumb_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="L_thumb_ip_link" pos="0.075 -1.163e-05 0" quat="1 0 0 0"><joint name="L_thumb_ip_joint" type="hinge" axis="0 0 1" range="0 1.05" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0149835006039" pos="0.01353705 0.00416931 6.14e-06" fullinertia="9.00161030596e-07 1.60124798712e-06 1.52334943639e-06 -1.29830917874e-07 0 0" /><geom type="mesh" mesh="L_thumb_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_thumb_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body></body><body name="L_index_mpp_link" pos="0.041817 0.030769 -0.011696" quat="0.703528604629 0.704815095962 -0.0568989195442 0.0710330622198"><joint name="L_index_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0127240791063" pos="0.01525314 -0.00181681 0.00015205" fullinertia="7.53019323671e-07 3.08997584541e-06 3.04669887279e-06 0 0 0" /><geom type="mesh" mesh="L_index_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_index_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="L_index_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881"><joint name="L_index_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0115543717794" pos="0.01680857 -0.00117535 0" fullinertia="3.63526570048e-07 2.26771336554e-06 2.25905797101e-06 -2.51006441224e-07 0 0" /><geom type="mesh" mesh="L_index_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_index_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body><body name="L_middle_mpp_link" pos="0.042022 0.010356 -0.011696" quat="0.704206018631 0.704208605329 -0.0639691075588 0.0639693425309"><joint name="L_middle_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0123790664251" pos="0.01476009 -0.00171481 0.00012869" fullinertia="7.44363929147e-07 2.97745571659e-06 2.93417874396e-06 -2.59661835749e-08 0 0" /><geom type="mesh" mesh="L_middle_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_middle_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="L_middle_ip_link" pos="0.0388 0 0" quat="0.999981801511 0 0 -0.00603296340279"><joint name="L_middle_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0128862379227" pos="0.01771317 -0.00109666 2.56e-05" fullinertia="4.06803542673e-07 2.97745571659e-06 2.97745571659e-06 -3.28904991948e-07 0 0" /><geom type="mesh" mesh="L_middle_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_middle_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body><body name="L_ring_mpp_link" pos="0.041817 -0.010057 -0.011696" quat="0.704812511752 0.703531193555 -0.071032853218 0.0568991804629"><joint name="L_ring_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0123790664251" pos="0.01475954 -0.00171495 0.00012869" fullinertia="7.44363929147e-07 2.97745571659e-06 2.93417874396e-06 -2.59661835749e-08 0 0" /><geom type="mesh" mesh="L_ring_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_ring_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="L_ring_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881"><joint name="L_ring_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0118993844605" pos="0.01615432 -0.00130235 2.763e-05" fullinertia="3.72181964573e-07 2.44082125604e-06 2.43216586151e-06 -2.85628019324e-07 0 0" /><geom type="mesh" mesh="L_ring_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_ring_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body><body name="L_little_mpp_link" pos="0.041203 -0.030462 -0.011696" quat="0.705348047824 0.702782889817 -0.0780897965205 0.0498229353808"><joint name="L_little_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0123790664251" pos="0.0147588 -0.00171514 0.00012869" fullinertia="7.44363929147e-07 2.97745571659e-06 2.93417874396e-06 -2.59661835749e-08 0 0" /><geom type="mesh" mesh="L_little_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_little_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="L_little_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881"><joint name="L_little_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0102070297907" pos="0.01303327 -0.00143438 2.95e-05" fullinertia="2.94283413849e-07 1.54931561997e-06 1.54066022544e-06 -1.99074074074e-07 0 0" /><geom type="mesh" mesh="L_little_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="L_little_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body></body></body></body>
                       </body>
                     </body>
                   </body>
@@ -175,22 +180,7 @@
                           <inertial mass="0.24541" pos="-0.00011076 3.22e-06 0.011338" fullinertia="7.52e-05 9.35e-05 0.000106 0 -2.13e-06 0" />
                           <geom type="mesh" mesh="R_sixforce_link" rgba="0.65 0.28 0.82 1" contype="0" conaffinity="0" group="1" density="0" />
                           <geom type="mesh" mesh="R_sixforce_link" rgba="0.65 0.28 0.82 1" density="0" />
-                          <body name="R_gripper_base_link" pos="-0.0022054 0.00188020836776 0.00681524409349" quat="-0.00172210568552 0.707105966421 0.707103397327 0.00172397579886">
-                            <geom type="mesh" mesh="R_gripper_base_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
-                            <body name="right_R_gripper_link" pos="1.36e-05 0.024869 0.191">
-                              <inertial mass="0.014999" pos="0.0069838 -0.001397 -0.02379" quat="0.99017207943 0.0628827231877 0.105770984017 -0.0664643903247" diaginertia="2.3e-06 1.7e-06 1.3e-06" />
-                              <joint name="right_R_gripper_joint" type="slide" axis="0 1 0" range="-0.025 0" actuatorfrcrange="-140 140" />
-                              <geom type="mesh" mesh="right_R_gripper_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
-                              <geom type="mesh" mesh="right_R_gripper_link" rgba="0.22 0.40 0.65 1" density="0" />
-                            </body>
-                            <body name="right_L_gripper_link" pos="1.36e-05 -0.025131 0.191">
-                              <inertial mass="0.014999" pos="0.0069838 -0.001397 -0.02379" quat="0.99017207943 0.0628827231877 0.105770984017 -0.0664643903247" diaginertia="2.3e-06 1.7e-06 1.3e-06" />
-                              <joint name="right_L_gripper_joint" type="slide" axis="0 1 0" range="0 0.025" actuatorfrcrange="-140 140" />
-                              <geom type="mesh" mesh="right_L_gripper_link" rgba="0.22 0.40 0.65 1" contype="0" conaffinity="0" group="1" density="0" />
-                              <geom type="mesh" mesh="right_L_gripper_link" rgba="0.22 0.40 0.65 1" density="0" />
-                            </body>
-                          </body>
-                        </body>
+                          <body name="R_hand_base_link" pos="-0.0022054 0.00192894317484 -0.00318463715174" quat="0.00243672109646 -0.999996714102 -0.000796344261871 -3.29052063867e-06"><inertial mass="0.0453429720209" pos="0.00065934 -0.00064662 0.02223161" fullinertia="1.4904589372e-05 3.18691626409e-05 3.47167874396e-05 -2.42351046699e-07 -3.72181964573e-07 1.90418679549e-07" /><geom type="mesh" mesh="R_hand_base_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_hand_base_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="R_palm_link" pos="0.00035702 -0.013196 0.099778" quat="0.499998163397 0.499999999997 -0.499999999997 0.500001836603"><inertial mass="0.330838910024" pos="-0.00938866 0.00221701 -0.0117814" fullinertia="0.000197109299517 0.000305267109501 0.000435790458937 1.46276167472e-06 4.32769726248e-08 1.13904991948e-05" /><geom type="mesh" mesh="R_palm_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_palm_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="R_thumb_cmp_link" pos="-0.048578 -0.028956 -0.0073648" quat="0.648704606807 0.281391172734 -0.648706674022 -0.281391172734"><joint name="R_thumb_cmp_joint" type="hinge" axis="0 0 1" range="0 0.96" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0130785867552" pos="0.00563085 0.00075 -0.00435852" fullinertia="8.04951690821e-07 9.08816425121e-07 9.26127214171e-07 -6.05877616747e-08 2.59661835749e-07 1.73107890499e-08" /><geom type="mesh" mesh="R_thumb_cmp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_thumb_cmp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="R_thumb_mpp_link" pos="0.012 0.0010557 -0.010045" quat="0.74313698447 -0.669139310085 -5.18799189137e-05 -5.76204575298e-05"><joint name="R_thumb_mpp_joint" type="hinge" axis="0 0 1" range="0 1.04" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0583477282609" pos="0.03618423 -0.00195018 7.704e-05" fullinertia="5.5134863124e-06 2.85281803543e-05 2.82858293076e-05 -2.31099033816e-06 -2.59661835749e-08 0" /><geom type="mesh" mesh="R_thumb_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_thumb_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="R_thumb_ip_link" pos="0.075 0 0" quat="0.999981753215 0 0 0.00604096325701"><joint name="R_thumb_ip_joint" type="hinge" axis="0 0 1" range="0 1.05" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0149835006039" pos="0.01353705 0.00416931 -6.14e-06" fullinertia="9.00161030596e-07 1.60124798712e-06 1.52334943639e-06 -1.29830917874e-07 0 0" /><geom type="mesh" mesh="R_thumb_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_thumb_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body></body><body name="R_index_mpp_link" pos="0.041818 -0.03077 -0.011696" quat="0.704812511752 0.703531193555 -0.071032853218 0.0568991804629"><joint name="R_index_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0127240791063" pos="0.01525314 -0.00181681 -0.00015205" fullinertia="7.53019323671e-07 3.08997584541e-06 3.04669887279e-06 0 0 0" /><geom type="mesh" mesh="R_index_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_index_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="R_index_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881"><joint name="R_index_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0115543717794" pos="0.01680857 -0.00117535 0" fullinertia="3.63526570048e-07 2.26771336554e-06 2.25905797101e-06 -2.51006441224e-07 0 0" /><geom type="mesh" mesh="R_index_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_index_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body><body name="R_middle_mpp_link" pos="0.042022 -0.011107 -0.011696" quat="0.704776297688 0.703572761783 -0.0571472724997 0.0707808472689"><joint name="R_middle_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0123790664251" pos="0.01476009 -0.00171481 -0.00012869" fullinertia="7.44363929147e-07 2.97745571659e-06 2.93417874396e-06 -2.59661835749e-08 0 0" /><geom type="mesh" mesh="R_middle_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_middle_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="R_middle_ip_link" pos="0.038807 0 0" quat="0.999934974531 5.83876537821e-05 -0.00967737738302 -0.00603255073219"><joint name="R_middle_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0128862379227" pos="0.01771317 -0.00109666 -2.56e-05" fullinertia="4.06803542673e-07 2.97745571659e-06 2.97745571659e-06 -3.28904991948e-07 0 0" /><geom type="mesh" mesh="R_middle_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_middle_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body><body name="R_ring_mpp_link" pos="0.041818 0.010057 -0.011696" quat="0.703528604629 0.704815095962 -0.0568989195442 0.0710330622198"><joint name="R_ring_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0123790664251" pos="0.01475954 -0.00171495 -0.00012869" fullinertia="7.44363929147e-07 2.97745571659e-06 2.93417874396e-06 -2.59661835749e-08 0 0" /><geom type="mesh" mesh="R_ring_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_ring_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="R_ring_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881"><joint name="R_ring_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0118993844605" pos="0.01615432 -0.00130235 -2.763e-05" fullinertia="3.72181964573e-07 2.44082125604e-06 2.43216586151e-06 -2.85628019324e-07 0 0" /><geom type="mesh" mesh="R_ring_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_ring_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body><body name="R_little_mpp_link" pos="0.041203 0.030462 -0.011696" quat="0.702780298925 0.705350629285 -0.0498226485406 0.0780899795298"><joint name="R_little_mpp_joint" type="hinge" axis="0 0 1" range="0 1.46" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0123790664251" pos="0.0147588 -0.00171514 -0.00012869" fullinertia="7.44363929147e-07 2.97745571659e-06 2.93417874396e-06 -2.59661835749e-08 0 0" /><geom type="mesh" mesh="R_little_mpp_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_little_mpp_link" rgba="0.22 0.40 0.65 1" density="0" /><body name="R_little_ip_link" pos="0.0388 0 0" quat="0.99997368623 0 0 -0.00725443636881"><joint name="R_little_ip_joint" type="hinge" axis="0 0 1" range="0 1.62" actuatorfrcrange="-1.35 1.35" /><inertial mass="0.0102070297907" pos="0.01303327 -0.00143438 -2.95e-05" fullinertia="2.94283413849e-07 1.54931561997e-06 1.54066022544e-06 -1.99074074074e-07 0 0" /><geom type="mesh" mesh="R_little_ip_link" rgba="0.22 0.40 0.65 1" density="0" contype="0" conaffinity="0" group="1" /><geom type="mesh" mesh="R_little_ip_link" rgba="0.22 0.40 0.65 1" density="0" /></body></body></body></body></body>
                       </body>
                     </body>
                   </body>
@@ -274,22 +264,8 @@
       </body>
     </body>
   </worldbody>
-  <equality>
-    <joint name="left_gripper_sync" joint1="left_R_gripper_joint" joint2="left_L_gripper_joint" polycoef="0 -1 0 0 0" />
-    <joint name="right_gripper_sync" joint1="right_R_gripper_joint" joint2="right_L_gripper_joint" polycoef="0 -1 0 0 0" />
-  </equality>
-  <tendon>
-    <fixed name="left_gripper_drive">
-      <joint joint="left_R_gripper_joint" coef="1" />
-      <joint joint="left_L_gripper_joint" coef="-1" />
-    </fixed>
-    <fixed name="right_gripper_drive">
-      <joint joint="right_R_gripper_joint" coef="1" />
-      <joint joint="right_L_gripper_joint" coef="-1" />
-    </fixed>
-  </tendon>
   <keyframe>
-    <key name="home" qpos="0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+    <key name="home" qpos="0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
   </keyframe>
   <actuator>
     <motor name="waist_yaw_joint" joint="waist_yaw_joint" />
@@ -322,7 +298,27 @@
     <motor name="L_knee_pitch_joint" joint="L_knee_pitch_joint" />
     <motor name="L_ankle_pitch_joint" joint="L_ankle_pitch_joint" />
     <motor name="L_ankle_roll_joint" joint="L_ankle_roll_joint" />
-    <position name="left_gripper_motor" tendon="left_gripper_drive" kp="5600" kv="40" ctrllimited="true" ctrlrange="-0.05 0" forcelimited="true" forcerange="-140 140" />
-    <position name="right_gripper_motor" tendon="right_gripper_drive" kp="5600" kv="40" ctrllimited="true" ctrlrange="-0.05 0" forcelimited="true" forcerange="-140 140" />
+    <motor name="L_thumb_cmp_joint" joint="L_thumb_cmp_joint" />
+    <motor name="L_thumb_mpp_joint" joint="L_thumb_mpp_joint" />
+    <motor name="L_thumb_ip_joint" joint="L_thumb_ip_joint" />
+    <motor name="L_index_mpp_joint" joint="L_index_mpp_joint" />
+    <motor name="L_index_ip_joint" joint="L_index_ip_joint" />
+    <motor name="L_middle_mpp_joint" joint="L_middle_mpp_joint" />
+    <motor name="L_middle_ip_joint" joint="L_middle_ip_joint" />
+    <motor name="L_ring_mpp_joint" joint="L_ring_mpp_joint" />
+    <motor name="L_ring_ip_joint" joint="L_ring_ip_joint" />
+    <motor name="L_little_mpp_joint" joint="L_little_mpp_joint" />
+    <motor name="L_little_ip_joint" joint="L_little_ip_joint" />
+    <motor name="R_thumb_cmp_joint" joint="R_thumb_cmp_joint" />
+    <motor name="R_thumb_mpp_joint" joint="R_thumb_mpp_joint" />
+    <motor name="R_thumb_ip_joint" joint="R_thumb_ip_joint" />
+    <motor name="R_index_mpp_joint" joint="R_index_mpp_joint" />
+    <motor name="R_index_ip_joint" joint="R_index_ip_joint" />
+    <motor name="R_middle_mpp_joint" joint="R_middle_mpp_joint" />
+    <motor name="R_middle_ip_joint" joint="R_middle_ip_joint" />
+    <motor name="R_ring_mpp_joint" joint="R_ring_mpp_joint" />
+    <motor name="R_ring_ip_joint" joint="R_ring_ip_joint" />
+    <motor name="R_little_mpp_joint" joint="R_little_mpp_joint" />
+    <motor name="R_little_ip_joint" joint="R_little_ip_joint" />
   </actuator>
 </mujoco>
