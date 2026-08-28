@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="walker_s2_v1_simple_hand_v4_description">
   <mujoco>
-    <compiler meshdir="../../meshes/s2_v1_simple" balanceinertia="false" discardvisual="false" autolimits="true" inertiafromgeom="false" convexhull="false" boundmass="0.0001" usethread="true" />
+    <compiler meshdir="../meshes/s2_v1_simple" balanceinertia="false" discardvisual="false" autolimits="true" inertiafromgeom="false" convexhull="false" boundmass="0.0001" usethread="true" />
   </mujoco>
   <link name="base_link">
     <inertial>
-      <origin xyz="-0.06647042 -0.00011731 0.01040916" rpy="0 0 0" />
-      <mass value="6.3977887" />
-      <inertia ixx="0.05983168" ixy="-2.88E-05" ixz="-0.00446887" iyy="0.02987447" iyz="-0.000148" izz="0.0772981" />
+      <origin xyz="-0.063865 -0.00011351 0.010653" rpy="0 0 0" />
+      <mass value="6.1057" />
+      <inertia ixx="0.056248" ixy="-2.68E-05" ixz="-0.0044323" iyy="0.028833" iyz="-0.000134" izz="0.072967" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -15,316 +15,848 @@
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/base_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/base_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <link name="waist_yaw_link">
     <inertial>
-      <origin xyz="-0.00019894 0.00967667 0.04739225" rpy="0 0 0" />
-      <mass value="0.51683988" />
-      <inertia ixx="0.00171935" ixy="-2.37E-06" ixz="-9.57E-06" iyy="0.00108364" iyz="-6.49E-05" izz="0.00138793" />
+      <origin xyz="-0.00019894 -0.0096767 0.027108" rpy="0 0 0" />
+      <mass value="0.51684" />
+      <inertia ixx="0.0017194" ixy="2.37E-06" ixz="9.57E-06" iyy="0.0010836" iyz="-6.49E-05" izz="0.0013879" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 5.47307561778e-07 0.0745000001862" rpy="3.14158530718 0 0" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/waist_yaw_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/waist_yaw_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="waist_yaw_joint" type="revolute">
-    <origin xyz="0 0 0.0684999998118007" rpy="0 0 0" />
+    <origin xyz="0 0 0.143" rpy="3.1416 0 0" />
     <parent link="base_link" />
     <child link="waist_yaw_link" />
     <axis xyz="0 0 1" />
-    <limit lower="-2.8274" upper="2.8274" effort="85" velocity="3.1415926" />
+    <limit lower="-2.8274" upper="2.8274" effort="85" velocity="3.1416" />
   </joint>
   <link name="waist_pitch_link">
     <inertial>
-      <origin xyz="-0.01588066 0.00219071 0.20110514" rpy="0 0 0" />
-      <mass value="23.78819178" />
-      <inertia ixx="0.49435905" ixy="-0.00244" ixz="0.01157515" iyy="0.43869944" iyz="0.00565" izz="0.19771678" />
+      <origin xyz="-0.017372 0.20542 -0.0021071" rpy="0 0 0" />
+      <mass value="24.186" />
+      <inertia ixx="0.52255" ixy="0.0122" ixz="0.0024557" iyy="0.20002" iyz="-0.00535" izz="0.4671" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 -1.88199178464e-10 0" rpy="-1.5708 0 0" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/waist_pitch_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0.0 0.2 0.0" rpy="0 0.0 0.0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/waist_pitch_link.STL" />
+        <box size="0.2844 0.4729 0.2671" />
       </geometry>
     </collision>
   </link>
   <joint name="waist_pitch_joint" type="revolute">
-    <origin xyz="0 0 0.0745000000000001" rpy="0 0 0" />
+    <origin xyz="0 0 0" rpy="-1.5708 0 0" />
     <parent link="waist_yaw_link" />
     <child link="waist_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-0.6108" upper="1.5707" effort="265" velocity="2.094395" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5707" upper="0.6108" effort="265" velocity="2.0944" />
+  </joint>
+  <link name="torso_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0001" />
+      <inertia ixx="1e-10" ixy="0" ixz="0" iyy="1e-10" iyz="0" izz="1e-10" />
+    </inertial>
+  </link>
+  <joint name="torso_waist_joint" type="fixed">
+    <origin xyz="-0.0046 0.34864 0" rpy="-1.5708 0 0" />
+    <parent link="waist_pitch_link" />
+    <child link="torso_link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0001" />
+      <inertia ixx="1e-10" ixy="0" ixz="0" iyy="1e-10" iyz="0" izz="1e-10" />
+    </inertial>
+  </link>
+  <joint name="head_base_joint" type="fixed">
+    <origin xyz="0 0 0.13546" rpy="0 0 0" />
+    <parent link="torso_link" />
+    <child link="head_base_link" />
+    <axis xyz="0 0 1" />
   </joint>
   <link name="head_yaw_link">
     <inertial>
-      <origin xyz="-0.0014622 0.000179 -0.00258882" rpy="0 0 0" />
-      <mass value="0.58109743" />
-      <inertia ixx="0.00151" ixy="1.02E-06" ixz="0.000245" iyy="0.00154" iyz="8.22E-06" izz="0.000899" />
+      <origin xyz="0.00023349 -3.98E-05 0.023081" rpy="0 0 0" />
+      <mass value="0.21952" />
+      <inertia ixx="8.12E-05" ixy="1.01E-06" ixz="-3.2E-07" iyy="6.29E-05" iyz="3.78E-06" izz="7.63E-05" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0.0077354 1.28062622723e-06 -1.00001858471e-05" rpy="0 0.0064767 0" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/head_yaw_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/head_yaw_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="head_yaw_joint" type="revolute">
-    <origin xyz="0.0031354 0 0.48409" rpy="0 0.0064767 0" />
-    <parent link="waist_pitch_link" />
+    <origin xyz="0 0 0.0" rpy="0 0 0" />
+    <parent link="head_base_link" />
     <child link="head_yaw_link" />
     <axis xyz="0 0 1" />
     <limit lower="-1.658" upper="1.658" effort="4.5" velocity="3.1416" />
   </joint>
   <link name="head_pitch_link">
     <inertial>
-      <origin xyz="0.04056554 0.00026037 0.10249699" rpy="0 0 0" />
-      <mass value="1.06900742" />
-      <inertia ixx="0.00473535" ixy="1.262E-05" ixz="0.000334" iyy="0.00518573" iyz="2.68E-05" izz="0.00450809" />
+      <origin xyz="0.040566 0.1025 -0.00026038" rpy="0 0 0" />
+      <mass value="1.069" />
+      <inertia ixx="0.0047354" ixy="0.00033437" ixz="-1.26E-05" iyy="0.0045081" iyz="-2.68E-05" izz="0.0051857" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0.00789731636799 -1.05245342545e-05 -1.28058756847e-06" rpy="-1.57079999992 -2.37900811691e-08 -0.00647669999996" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/head_pitch_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/head_pitch_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="head_pitch_joint" type="revolute">
-    <origin xyz="0 0 0.0249999999999998" rpy="0 0 0" />
+    <origin xyz="0 0 0.025" rpy="1.5708 0 0" />
     <parent link="head_yaw_link" />
     <child link="head_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-0.5236" upper="0.7854" effort="4.5" velocity="3.1415926" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.7854" upper="0.5236" effort="4.5" velocity="3.1416" />
+  </joint>
+  <link name="L_arm_base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0001" />
+      <inertia ixx="1e-10" ixy="0" ixz="0" iyy="1e-10" iyz="0" izz="1e-10" />
+    </inertial>
+  </link>
+  <joint name="L_arm_base_joint" type="fixed">
+    <origin xyz="0 0.15387 0" rpy="0 -1.74533 1.5708" />
+    <parent link="torso_link" />
+    <child link="L_arm_base_link" />
+    <axis xyz="0 0 1" />
   </joint>
   <link name="L_shoulder_pitch_link">
     <inertial>
-      <origin xyz="0.0066 0.05408533 0.00148738" rpy="0 0 0" />
-      <mass value="0.96119379" />
-      <inertia ixx="0.00110795" ixy="-3.64E-05" ixz="5.16E-06" iyy="0.00087779" iyz="1.28E-06" izz="0.00115117" />
+      <origin xyz="0.000221 -0.0050932 -0.05263" rpy="0 0 0" />
+      <mass value="0.98147" />
+      <inertia ixx="0.0011759" ixy="-4.84E-06" ixz="-2.41E-06" iyy="0.0011237" iyz="-3.12E-05" izz="0.00090041" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="1.87053209144e-05 -0.00225472106527 0.00299913255592" rpy="-1.57079927269 -0.00112828835246 -1.5720266544" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_shoulder_pitch_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_shoulder_pitch_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="L_shoulder_pitch_joint" type="revolute">
-    <origin xyz="-0.00234526807374913 0.150911910893357 0.348137625216274" rpy="0.174529401585699 0.00140756140148448 -0.000893829675734454" />
-    <parent link="waist_pitch_link" />
+    <origin xyz="0 0.0 0" rpy="0 0 0" />
+    <parent link="L_arm_base_link" />
     <child link="L_shoulder_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-2.8623" upper="2.8623" effort="80" velocity="3.1415926" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.8623" upper="2.8623" effort="80" velocity="3.1416" />
   </joint>
   <link name="L_shoulder_roll_link">
     <inertial>
-      <origin xyz="0.00628631 0.00072174 -0.03506629" rpy="0 0 0" />
-      <mass value="0.53957013" />
-      <inertia ixx="0.00143013" ixy="1.78E-05" ixz="-0.000107" iyy="0.0018914" iyz="-1.48E-05" izz="0.00123036" />
+      <origin xyz="-0.036346 0.0019751 -0.0052697" rpy="0 0 0" />
+      <mass value="0.53957" />
+      <inertia ixx="0.0012305" ixy="-1.9E-05" ixz="0.000107" iyy="0.0018915" iyz="-1.3E-05" izz="0.0014298" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="1.84322755645e-05 8.35886375741e-07 -0.0023258029312" rpy="-2.40105728762 1.56912945409 -2.40105364538" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_shoulder_roll_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_shoulder_roll_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="L_shoulder_roll_joint" type="revolute">
-    <origin xyz="0 0.063 0" rpy="0 0 0" />
+    <origin xyz="0 0 -0.06" rpy="-1.5708 0 0" />
     <parent link="L_shoulder_pitch_link" />
     <child link="L_shoulder_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-0.1222" upper="1.885" effort="80" velocity="3.1416" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.885" upper="0.1222" effort="80" velocity="3.1416" />
   </joint>
   <link name="L_shoulder_yaw_link">
     <inertial>
-      <origin xyz="0.00269924 -0.00904 -0.12859025" rpy="0 0 0" />
-      <mass value="1.9957629" />
-      <inertia ixx="0.01575766" ixy="5.27E-05" ixz="0.00042221" iyy="0.01564432" iyz="-0.00157" izz="0.00210372" />
+      <origin xyz="-0.00899 0.00278 0.1286" rpy="0 0 0" />
+      <mass value="1.9976" />
+      <inertia ixx="0.015656" ixy="5.4E-05" ixz="0.0015653" iyy="0.015768" iyz="-0.000436" izz="0.0021057" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="-0.000978533862154 0.00322459409686 -0.00128824278529" rpy="-3.13675168786 -0.00118414166463 1.57100452844" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_shoulder_yaw_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_shoulder_yaw_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="L_shoulder_yaw_joint" type="revolute">
-    <origin xyz="0.00100044139373956 -0.00097799938964549 -0.081729009277992" rpy="0.0048404998575982 -4.98625856512281E-05 0.000916409169146343" />
+    <origin xyz="-0.083 0 0" rpy="-1.5708 0 1.5708" />
     <parent link="L_shoulder_roll_link" />
     <child link="L_shoulder_yaw_link" />
     <axis xyz="0 0 1" />
-    <limit lower="-2.9322" upper="2.9322" effort="45" velocity="3.1415926" />
+    <limit lower="-2.9322" upper="2.9322" effort="45" velocity="3.1416" />
   </joint>
   <link name="L_elbow_roll_link">
     <inertial>
-      <origin xyz="0.00094352 0.00759335 -0.05696495" rpy="0 0 0" />
-      <mass value="0.68886017" />
-      <inertia ixx="0.00225859" ixy="1.039E-05" ixz="-3E-05" iyy="0.00259379" iyz="0.000319" izz="0.0014374" />
+      <origin xyz="0.0085304 -0.05741 0.00089275" rpy="0 0 0" />
+      <mass value="0.6675" />
+      <inertia ixx="0.0025384" ixy="0.00030611" ixz="7.49E-06" iyy="0.0013951" iyz="-3.35E-05" izz="0.002205" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="5.4172129427e-05 0.00119434273627 0.00276237905223" rpy="0.178359528394 -1.56959040305 -1.74431476657" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_elbow_roll_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_elbow_roll_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="L_elbow_roll_joint" type="revolute">
-    <origin xyz="-0.000205938241512521 -0.0199917457575602 -0.213000000000862" rpy="0 0 0" />
+    <origin xyz="-0.019993 0 0.213" rpy="-1.5708 0 0" />
     <parent link="L_shoulder_yaw_link" />
     <child link="L_elbow_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-2.6529" upper="0.0349" effort="45" velocity="3.1415926" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.6529" upper="0.0349" effort="45" velocity="3.1416" />
   </joint>
   <link name="L_elbow_yaw_link">
     <inertial>
-      <origin xyz="0.00022731 0.00098935 -0.0314613" rpy="0 0 0" />
-      <mass value="0.85788719" />
-      <inertia ixx="0.00163124" ixy="2.24E-06" ixz="1.5E-07" iyy="0.001433" iyz="5.2E-05" izz="0.00087024" />
+      <origin xyz="0.00097407 0.00017933 0.045777" rpy="0 0 0" />
+      <mass value="0.87457" />
+      <inertia ixx="0.0014384" ixy="3.89E-06" ixz="-5.22E-05" iyy="0.0016363" iyz="7E-07" izz="0.00087583" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0.000624776231679 0.00283238680462 0.0132084112092" rpy="-3.13675280493 -0.00118869916327 1.57194607441" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_elbow_yaw_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_elbow_yaw_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="L_elbow_yaw_joint" type="revolute">
-    <origin xyz="0.00020593824151241 0.0199917457575602 -0.118180766774219" rpy="0 0 -0.000941556343830603" />
+    <origin xyz="0.019993 -0.10368 0" rpy="1.5708 0 0" />
     <parent link="L_elbow_roll_link" />
     <child link="L_elbow_yaw_link" />
     <axis xyz="0 0 1" />
-    <limit lower="-2.9322" upper="2.9322" effort="20" velocity="3.1415926" />
+    <limit lower="-2.9322" upper="2.9322" effort="20" velocity="3.1416" />
   </joint>
   <link name="L_wrist_pitch_link">
     <inertial>
-      <origin xyz="0.0049237 0.0048371 -0.038455" rpy="0 0 0" />
-      <mass value="1.2811" />
-      <inertia ixx="0.0026759" ixy="2.955E-05" ixz="0.000217" iyy="0.0026802" iyz="-0.000226" izz="0.00089277" />
+      <origin xyz="-0.038445 -0.0048559 -0.0047721" rpy="0 0 0" />
+      <mass value="1.3145" />
+      <inertia ixx="0.00090036" ixy="-0.00021851" ixz="0.000227" iyy="0.0027314" iyz="3.05E-05" izz="0.0027358" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0.00129363222521 -0.00270956450771 -0.00112737009047" rpy="-1.56590396526 -0.0104909666427 -1.57722349694" />
       <geometry>
         <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_wrist_pitch_link.STL" />
       </geometry>
       <material name="">
-        <color rgba="1 1 1 1" />
+        <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_wrist_pitch_link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint name="L_wrist_pitch_joint" type="revolute">
-    <origin xyz="0 0 -0.10381924170782" rpy="0 0.00519297191600547 -0.00935924280425601" />
+    <origin xyz="0 0 0.11832" rpy="3.1416 1.5708 0" />
     <parent link="L_elbow_yaw_link" />
     <child link="L_wrist_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-1.658" upper="1.658" effort="20" velocity="3.1415926" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.658" upper="1.658" effort="20" velocity="3.1416" />
   </joint>
   <link name="L_wrist_roll_link">
     <inertial>
-      <origin xyz="0.000742 0.00015724 -0.017348" rpy="0 0 0" />
-      <mass value="0.15344" />
-      <inertia ixx="0.00011218" ixy="4E-08" ixz="-7.71E-06" iyy="0.00027506" iyz="8.1E-07" izz="0.00021592" />
+      <origin xyz="-4.59E-06 0.017056 -0.0007487" rpy="0 0 0" />
+      <mass value="0.1521" />
+      <inertia ixx="0.00027356" ixy="0" ixz="-2E-08" iyy="0.00021546" iyz="-7.68E-06" izz="0.00011023" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00149502706151 -0.00129455981355 -0.0026196520851" rpy="-1.68311098521 1.56020752025 3.02445036097" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_wrist_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="L_wrist_roll_joint" type="revolute">
+    <origin xyz="-0.076 0 0" rpy="1.5708 1.5708 3.1416" />
+    <parent link="L_wrist_pitch_link" />
+    <child link="L_wrist_roll_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.0245" upper="2.0245" effort="20" velocity="3.1416" />
+  </joint>
+  <link name="R_arm_base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0001" />
+      <inertia ixx="1e-10" ixy="0" ixz="0" iyy="1e-10" iyz="0" izz="1e-10" />
+    </inertial>
+  </link>
+  <joint name="R_arm_base_joint" type="fixed">
+    <origin xyz="0 -0.15387 0" rpy="3.1416 -1.39627 1.5708" />
+    <parent link="torso_link" />
+    <child link="R_arm_base_link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="R_shoulder_pitch_link">
+    <inertial>
+      <origin xyz="-8.87E-05 0.0050444 -0.052623" rpy="0 0 0" />
+      <mass value="0.98273" />
+      <inertia ixx="0.0011778" ixy="-5.21E-06" ixz="-4.64E-06" iyy="0.0011244" iyz="3.15E-05" izz="0.00090287" />
+    </inertial>
+    <visual>
+      <origin xyz="1.91251520044e-05 0.00225476484782 0.00300162216058" rpy="1.5707880239 -0.0011136757774 1.5755480699" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_shoulder_pitch_joint" type="revolute">
+    <origin xyz="0 0.0 0" rpy="0 0 0" />
+    <parent link="R_arm_base_link" />
+    <child link="R_shoulder_pitch_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.8623" upper="2.8623" effort="80" velocity="3.1416" />
+  </joint>
+  <link name="R_shoulder_roll_link">
+    <inertial>
+      <origin xyz="-0.036091 0.0019662 0.0053449" rpy="0 0 0" />
+      <mass value="0.5434" />
+      <inertia ixx="0.0012461" ixy="-1.87E-05" ixz="-0.000109" iyy="0.001912" iyz="1.3E-05" izz="0.0014368" />
+    </inertial>
+    <visual>
+      <origin xyz="1.93148398187e-05 -1.66977130611e-06 0.00232492809463" rpy="-0.173407097915 -1.56432021873 -2.96819213047" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_shoulder_roll_joint" type="revolute">
+    <origin xyz="0 0 -0.06" rpy="-1.5708 0 0" />
+    <parent link="R_shoulder_pitch_link" />
+    <child link="R_shoulder_roll_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.885" upper="0.1222" effort="80" velocity="3.1416" />
+  </joint>
+  <link name="R_shoulder_yaw_link">
+    <inertial>
+      <origin xyz="-0.0090557 -0.0029797 0.12863" rpy="0 0 0" />
+      <mass value="1.9965" />
+      <inertia ixx="0.015641" ixy="-4.94E-05" ixz="0.0015722" iyy="0.015751" iyz="0.000468" izz="0.0021093" />
+    </inertial>
+    <visual>
+      <origin xyz="0.000916750929106 0.00141055326981 0.00127441810004" rpy="-3.13679319458 -0.00474773605639 -1.5413117342" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_yaw_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_shoulder_yaw_joint" type="revolute">
+    <origin xyz="-0.083 0 0" rpy="-1.5708 -0.020023 1.5708" />
+    <parent link="R_shoulder_roll_link" />
+    <child link="R_shoulder_yaw_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.9322" upper="2.9322" effort="45" velocity="3.1416" />
+  </joint>
+  <link name="R_elbow_roll_link">
+    <inertial>
+      <origin xyz="0.0083606 -0.0579 -0.00065816" rpy="0 0 0" />
+      <mass value="0.68337" />
+      <inertia ixx="0.0025998" ixy="0.00029753" ixz="-5.05E-06" iyy="0.0014326" iyz="2.64E-05" izz="0.0022487" />
+    </inertial>
+    <visual>
+      <origin xyz="2.31241342071e-06 2.52080630881e-05 -0.000415216665789" rpy="2.97317815115 1.56603051293 -1.74405692386" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_elbow_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_elbow_roll_joint" type="revolute">
+    <origin xyz="-0.019989 -0.00040028 0.213" rpy="-1.5708 0 0.020023" />
+    <parent link="R_shoulder_yaw_link" />
+    <child link="R_elbow_roll_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.6529" upper="0.0349" effort="45" velocity="3.1416" />
+  </joint>
+  <link name="R_elbow_yaw_link">
+    <inertial>
+      <origin xyz="-0.00097407 -0.00017922 0.045777" rpy="0 0 0" />
+      <mass value="0.87457" />
+      <inertia ixx="0.0014384" ixy="3.89E-06" ixz="5.22E-05" iyy="0.00164" iyz="-7.1E-07" izz="0.00087583" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.000659472735417 0.00294874721474 0.015767638013" rpy="-3.13674323147 -0.00637531921142 -1.57191366046" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_elbow_yaw_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_elbow_yaw_joint" type="revolute">
+    <origin xyz="0.019993 -0.10368 0" rpy="1.5708 0 0" />
+    <parent link="R_elbow_roll_link" />
+    <child link="R_elbow_yaw_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.9322" upper="2.9322" effort="20" velocity="3.1416" />
+  </joint>
+  <link name="R_wrist_pitch_link">
+    <inertial>
+      <origin xyz="-0.038445 0.0048559 0.0047721" rpy="0 0 0" />
+      <mass value="1.3145" />
+      <inertia ixx="0.00090036" ixy="0.000219" ixz="-0.00022711" iyy="0.0027314" iyz="3.05E-05" izz="0.0027358" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00126450965948 -0.00343689825348 0.00116241815009" rpy="1.57564441634 0.00946881483842 1.57554431045" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_wrist_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_wrist_pitch_joint" type="revolute">
+    <origin xyz="0 0 0.11832" rpy="3.1416 1.5708 0" />
+    <parent link="R_elbow_yaw_link" />
+    <child link="R_wrist_pitch_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.658" upper="1.658" effort="20" velocity="3.1416" />
+  </joint>
+  <link name="R_wrist_roll_link">
+    <inertial>
+      <origin xyz="4.63E-06 0.017056 0.0007487" rpy="0 0 0" />
+      <mass value="0.1521" />
+      <inertia ixx="0.00027356" ixy="0" ixz="-2E-08" iyy="0.00021546" iyz="7.68E-06" izz="0.00011023" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00153085971892 0.00126280245902 -0.00379424613462" rpy="1.11115148199 -1.56020546924 0.464474145843" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_wrist_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_wrist_roll_joint" type="revolute">
+    <origin xyz="-0.076 0 0" rpy="1.5708 1.5708 3.1416" />
+    <parent link="R_wrist_pitch_link" />
+    <child link="R_wrist_roll_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.0245" upper="2.0245" effort="20" velocity="3.1416" />
+  </joint>
+  <link name="L_hip_roll_link">
+    <inertial>
+      <origin xyz="0.0092362 0.00068462 -0.0076246" rpy="0 0 0" />
+      <mass value="1.3211" />
+      <inertia ixx="0.001866" ixy="1.517E-05" ixz="-9.8E-05" iyy="0.0017359" iyz="2.52E-05" izz="0.0011634" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14159265359 -1.57079265359 3.14159265359" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="L_hip_roll_joint" type="revolute">
+    <origin xyz="0 0.105 0" rpy="0 1.5708 0" />
+    <parent link="base_link" />
+    <child link="L_hip_roll_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.4363" upper="0.7853" effort="220" velocity="3.1416" />
+  </joint>
+  <link name="L_hip_yaw_link">
+    <inertial>
+      <origin xyz="0.00023965 0.0039636 0.11569" rpy="0 0 0" />
+      <mass value="2.2891" />
+      <inertia ixx="0.0043044" ixy="3.98E-06" ixz="-9.23E-06" iyy="0.0048929" iyz="-5.1E-05" izz="0.0036277" />
+    </inertial>
+    <visual>
+      <origin xyz="1.34072478745e-07 2.68143512068e-07 0.0364999999988" rpy="3.14158530718 3.67319161082e-06 -3.6732320882e-06" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_yaw_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="L_hip_yaw_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 -1.5708 1.5708" />
+    <parent link="L_hip_roll_link" />
+    <child link="L_hip_yaw_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.7853" upper="1.0471" effort="60" velocity="5.236" />
+  </joint>
+  <link name="L_hip_pitch_link">
+    <inertial>
+      <origin xyz="0.0018469 -0.1559 -0.0026939" rpy="0 0 0" />
+      <mass value="4.1506" />
+      <inertia ixx="0.04292" ixy="0.00183" ixz="6.39E-05" iyy="0.0099854" iyz="-0.001123" izz="0.042785" />
+    </inertial>
+    <visual>
+      <origin xyz="4.48132668683e-07 8.22814039125e-13 8.96260431137e-07" rpy="-1.57079999999 3.67321859577e-06 3.67320510335e-06" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0054 -0.1728 -0.0012" rpy="1.5708 0.0 0.0" />
+      <geometry>
+        <cylinder radius="0.0878" length="0.3" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_hip_pitch_joint" type="revolute">
+    <origin xyz="0 0 0.122" rpy="-1.5708 0 0" />
+    <parent link="L_hip_yaw_link" />
+    <child link="L_hip_pitch_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.349" upper="1.9198" effort="200" velocity="8.7266" />
+  </joint>
+  <link name="L_knee_pitch_link">
+    <inertial>
+      <origin xyz="-0.0010047 -0.15955 0.0010045" rpy="0 0 0" />
+      <mass value="3.8269" />
+      <inertia ixx="0.034069" ixy="-0.000889" ixz="-6.85E-05" iyy="0.0048648" iyz="-0.000151" izz="0.034816" />
+    </inertial>
+    <visual>
+      <origin xyz="1.77049136316e-06 5.68001201628e-12 2.21860941105e-06" rpy="-1.57079999999 3.67321859577e-06 3.67320510335e-06" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_knee_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0048 -0.1752 -0.0029" rpy="1.5708 0.0 0.0" />
+      <geometry>
+        <cylinder radius="0.06165" length="0.3" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_knee_pitch_joint" type="revolute">
+    <origin xyz="0 -0.36 0" rpy="0 0 0" />
+    <parent link="L_hip_pitch_link" />
+    <child link="L_knee_pitch_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.2689" upper="0.0872" effort="250" velocity="9.5993" />
+  </joint>
+  <link name="L_ankle_pitch_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.065914" />
+      <inertia ixx="1.09E-05" ixy="-5E-08" ixz="0" iyy="1.84E-05" iyz="0" izz="1.09E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="3.12958224359e-06 1.06722408688e-11 3.57769030707e-06" rpy="-1.57079999999 3.67321859577e-06 3.67320510335e-06" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_ankle_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="L_ankle_pitch_joint" type="revolute">
+    <origin xyz="0 -0.37 0" rpy="0 0 0" />
+    <parent link="L_knee_pitch_link" />
+    <child link="L_ankle_pitch_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.5235" upper="1.0471" effort="60" velocity="8.7266" />
+  </joint>
+  <link name="L_ankle_roll_link">
+    <inertial>
+      <origin xyz="-0.030998 -0.000273 0.023974" rpy="0 0 0" />
+      <mass value="0.78306" />
+      <inertia ixx="0.0032684" ixy="-2.21E-06" ixz="0.000163" iyy="0.0028805" iyz="-7.82E-06" izz="0.00070111" />
+    </inertial>
+    <visual>
+      <origin xyz="-8.23452417364e-13 3.57770180264e-06 3.12956910199e-06" rpy="3.1415889804 -1.57079632678 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_ankle_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.034 0 0.0303" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <box size="0.03 0.107 0.2258" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_ankle_roll_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 0 1.5708" />
+    <parent link="L_ankle_pitch_link" />
+    <child link="L_ankle_roll_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.5235" upper="0.5235" effort="60" velocity="8.7266" />
+  </joint>
+  <link name="R_hip_roll_link">
+    <inertial>
+      <origin xyz="0.0092362 0.00068462 -0.0076246" rpy="0 0 0" />
+      <mass value="1.3211" />
+      <inertia ixx="0.001866" ixy="1.517E-05" ixz="-9.8E-05" iyy="0.0017359" iyz="2.52E-05" izz="0.0011634" />
+    </inertial>
+    <visual>
+      <origin xyz="0 -1.49276099815e-09 0" rpy="3.14159265359 -1.57079265359 3.14159265359" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_hip_roll_joint" type="revolute">
+    <origin xyz="0 -0.105 0" rpy="0 1.5708 0" />
+    <parent link="base_link" />
+    <child link="R_hip_roll_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.7853" upper="0.4363" effort="220" velocity="3.1416" />
+  </joint>
+  <link name="R_hip_yaw_link">
+    <inertial>
+      <origin xyz="0.00023965 0.0039636 0.11569" rpy="0 0 0" />
+      <mass value="2.2891" />
+      <inertia ixx="0.0043044" ixy="3.98E-06" ixz="-9.23E-06" iyy="0.0048929" iyz="-5.1E-05" izz="0.0036277" />
+    </inertial>
+    <visual>
+      <origin xyz="1.34072484228e-07 2.69636241064e-07 0.0364999999988" rpy="3.14158530718 3.67319161082e-06 -3.6732320882e-06" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_yaw_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_hip_yaw_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 -1.5708 1.5708" />
+    <parent link="R_hip_roll_link" />
+    <child link="R_hip_yaw_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.0471" upper="0.7853" effort="60" velocity="5.236" />
+  </joint>
+  <link name="R_hip_pitch_link">
+    <inertial>
+      <origin xyz="0.0015213 -0.15561 0.0027829" rpy="0 0 0" />
+      <mass value="4.1558" />
+      <inertia ixx="0.042874" ixy="0.0019094" ixz="-8.428E-05" iyy="0.010002" iyz="0.00113" izz="0.042717" />
+    </inertial>
+    <visual>
+      <origin xyz="4.48132673075e-07 2.97814092831e-10 8.97753159028e-07" rpy="-1.57079999999 3.67321859577e-06 3.67320510335e-06" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0054 -0.1728 -0.0012" rpy="1.5708 0.0 0.0" />
+      <geometry>
+        <cylinder radius="0.0878" length="0.3" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_hip_pitch_joint" type="revolute">
+    <origin xyz="0 0 0.122" rpy="-1.5708 0 0" />
+    <parent link="R_hip_yaw_link" />
+    <child link="R_hip_pitch_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.349" upper="1.9198" effort="200" velocity="8.7266" />
+  </joint>
+  <link name="R_knee_pitch_link">
+    <inertial>
+      <origin xyz="-0.0010047 -0.15955 0.0010045" rpy="0 0 0" />
+      <mass value="3.8269" />
+      <inertia ixx="0.034069" ixy="-0.000889" ixz="-6.85E-05" iyy="0.0048648" iyz="-0.000151" izz="0.034816" />
+    </inertial>
+    <visual>
+      <origin xyz="1.77049136755e-06 3.02671332442e-10 2.22010213894e-06" rpy="-1.57079999999 3.67321859577e-06 3.67320510335e-06" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_knee_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0048 -0.1752 -0.0029" rpy="1.5708 0.0 0.0" />
+      <geometry>
+        <cylinder radius="0.06165" length="0.3" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_knee_pitch_joint" type="revolute">
+    <origin xyz="0 -0.36 0" rpy="0 0 0" />
+    <parent link="R_hip_pitch_link" />
+    <child link="R_knee_pitch_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.2689" upper="0.0872" effort="250" velocity="9.5993" />
+  </joint>
+  <link name="R_ankle_pitch_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.065914" />
+      <inertia ixx="1.09E-05" ixy="0" ixz="0" iyy="1.84E-05" iyz="0" izz="1.09E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="3.12958224798e-06 3.07663561294e-10 3.57918303496e-06" rpy="-1.57079999999 3.67321859577e-06 3.67320510335e-06" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_ankle_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="R_ankle_pitch_joint" type="revolute">
+    <origin xyz="0 -0.37 0" rpy="0 0 0" />
+    <parent link="R_knee_pitch_link" />
+    <child link="R_ankle_pitch_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.5235" upper="1.0471" effort="60" velocity="8.7266" />
+  </joint>
+  <link name="R_ankle_roll_link">
+    <inertial>
+      <origin xyz="-0.030998 0.00026566 0.023951" rpy="0 0 0" />
+      <mass value="0.78316" />
+      <inertia ixx="0.0032686" ixy="2.22E-06" ixz="0.000164" iyy="0.0028805" iyz="7.55E-06" izz="0.00070131" />
+    </inertial>
+    <visual>
+      <origin xyz="2.96167868008e-10 3.57919453055e-06 3.12956910199e-06" rpy="3.1415889804 -1.57079632678 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_ankle_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.034 0 0.0303" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <box size="0.03 0.107 0.2258" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_ankle_roll_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 0 1.5708" />
+    <parent link="R_ankle_pitch_link" />
+    <child link="R_ankle_roll_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.5235" upper="0.5235" effort="60" velocity="8.7266" />
+  </joint>
+  <link name="L_hand_base_link">
+    <inertial>
+      <origin xyz="0.0001049 0.00078529 0.01739669" rpy="0 0 0" />
+      <mass value="0.0507285826538" />
+      <inertia ixx="1.56394457728e-05" ixy="-3.33108536162e-08" ixz="-8.6608219402e-07" iyy="3.53927819672e-05" iyz="-3.33108536162e-07" izz="4.32374879938e-05" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_wrist_roll_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_hand_base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_hand_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_palm_link">
+    <inertial>
+      <origin xyz="0.01623237 0.00522261 -0.02161192" rpy="0 0 0" />
+      <mass value="0.489030929127" />
+      <inertia ixx="0.00030780894284" ixy="3.04794310588e-06" ixz="1.12424130955e-05" iyy="0.000498563546073" iyz="-2.81476713057e-06" izz="0.000750743363374" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_palm_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_palm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_thumb_cmp_link">
+    <inertial>
+      <origin xyz="0.02421698 0.01048091 -0.00295563" rpy="0 0 0" />
+      <mass value="0.00695715498743" />
+      <inertia ixx="2.16520548505e-07" ixy="-9.99325608485e-08" ixz="-1.33243414465e-07" iyy="7.8280505998e-07" iyz="-1.66554268081e-08" izz="6.32906218707e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_cmp_link.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -333,16 +865,691 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_wrist_roll_link.STL" />
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_cmp_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint name="L_wrist_roll_joint" type="revolute">
-    <origin xyz="0.000394661300510024 0 -0.0759989750314687" rpy="0 -0.00519297191600564 0" />
-    <parent link="L_wrist_pitch_link" />
-    <child link="L_wrist_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-2.0245" upper="2.0245" effort="20" velocity="3.1415926" />
+  <link name="L_thumb_mpp_link">
+    <inertial>
+      <origin xyz="0.03033559 -0.00049293 0.00158431" rpy="0 0 0" />
+      <mass value="0.17141826896" />
+      <inertia ixx="1.3540861995e-05" ixy="-1.53896143707e-05" ixz="1.66554268081e-07" iyy="0.000121917724235" iyz="0" izz="0.000126831075144" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_thumb_ip_link">
+    <inertial>
+      <origin xyz="0.02836755 0.00260015 4.46E-05" rpy="0 0 0" />
+      <mass value="0.00213445956716" />
+      <inertia ixx="1.33243414465e-07" ixy="4.99662804243e-08" ixz="0" iyy="1.16587987657e-07" iyz="0" izz="1.16587987657e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_index_mpp_link">
+    <inertial>
+      <origin xyz="0.02435881 -0.00063526 -1.69E-05" rpy="0 0 0" />
+      <mass value="0.00958776306378" />
+      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_index_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_index_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_index_ip_link">
+    <inertial>
+      <origin xyz="0.02647229 0.00273686 -3.99E-06" rpy="0 0 0" />
+      <mass value="0.0145740480862" />
+      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_index_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_index_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_middle_mpp_link">
+    <inertial>
+      <origin xyz="0.02435881 -0.00063526 -1.69E-05" rpy="0 0 0" />
+      <mass value="0.00958776306378" />
+      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_middle_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_middle_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_middle_ip_link">
+    <inertial>
+      <origin xyz="0.02647229 0.00273686 -3.99E-06" rpy="0 0 0" />
+      <mass value="0.0145740480862" />
+      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_middle_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_middle_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_ring_mpp_link">
+    <inertial>
+      <origin xyz="0.02435881 -0.00063526 -1.69E-05" rpy="0 0 0" />
+      <mass value="0.00958776306378" />
+      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_ring_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_ring_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_ring_ip_link">
+    <inertial>
+      <origin xyz="0.02647229 0.00273686 -3.99E-06" rpy="0 0 0" />
+      <mass value="0.0145740480862" />
+      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_ring_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_ring_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_little_mpp_link">
+    <inertial>
+      <origin xyz="0.02435881 -0.00063526 -1.69E-05" rpy="0 0 0" />
+      <mass value="0.00958776306378" />
+      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_little_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_little_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_little_ip_link">
+    <inertial>
+      <origin xyz="0.02347382 0.00280389 -6.03E-06" rpy="0 0 0" />
+      <mass value="0.0126574081908" />
+      <inertia ixx="4.66351950626e-07" ixy="-2.83142255737e-07" ixz="0" iyy="2.34841517994e-06" iyz="0" izz="2.34841517994e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_little_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_little_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_hand_base_link">
+    <inertial>
+      <origin xyz="0.0001049 -0.00078529 0.01739669" rpy="0 0 0" />
+      <mass value="0.0507285826538" />
+      <inertia ixx="1.56394457728e-05" ixy="3.33108536162e-08" ixz="-8.6608219402e-07" iyy="3.53927819672e-05" iyz="3.33108536162e-07" izz="4.32374879938e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_hand_base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_hand_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_palm_link">
+    <inertial>
+      <origin xyz="0.01623237 -0.00522261 -0.02161192" rpy="0 0 0" />
+      <mass value="0.489030929127" />
+      <inertia ixx="0.00030780894284" ixy="-3.04794310588e-06" ixz="1.12424130955e-05" iyy="0.000498563546073" iyz="2.81476713057e-06" izz="0.000750743363374" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_palm_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_palm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_thumb_cmp_link">
+    <inertial>
+      <origin xyz="0.02421698 0.01048091 0.00295563" rpy="0 0 0" />
+      <mass value="0.00695715498743" />
+      <inertia ixx="2.16520548505e-07" ixy="-9.99325608485e-08" ixz="1.33243414465e-07" iyy="7.8280505998e-07" iyz="1.66554268081e-08" izz="6.32906218707e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_cmp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_cmp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_thumb_mpp_link">
+    <inertial>
+      <origin xyz="0.03033559 -0.00049293 -0.00158431" rpy="0 0 0" />
+      <mass value="0.17141826896" />
+      <inertia ixx="1.3540861995e-05" ixy="-1.53896143707e-05" ixz="-1.66554268081e-07" iyy="0.000121917724235" iyz="0" izz="0.000126831075144" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_thumb_ip_link">
+    <inertial>
+      <origin xyz="0.02836755 0.00260015 -4.46E-05" rpy="0 0 0" />
+      <mass value="0.00213445956716" />
+      <inertia ixx="1.33243414465e-07" ixy="4.99662804243e-08" ixz="0" iyy="1.16587987657e-07" iyz="0" izz="1.16587987657e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_index_mpp_link">
+    <inertial>
+      <origin xyz="0.02435881 -0.00063526 1.69E-05" rpy="0 0 0" />
+      <mass value="0.00958776306378" />
+      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_index_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_index_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_index_ip_link">
+    <inertial>
+      <origin xyz="0.02647229 0.00273686 3.99E-06" rpy="0 0 0" />
+      <mass value="0.0145740480862" />
+      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_index_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_index_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_middle_mpp_link">
+    <inertial>
+      <origin xyz="0.02435881 -0.00063526 1.69E-05" rpy="0 0 0" />
+      <mass value="0.00958776306378" />
+      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_middle_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_middle_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_middle_ip_link">
+    <inertial>
+      <origin xyz="0.02647229 0.00273686 3.99E-06" rpy="0 0 0" />
+      <mass value="0.0145740480862" />
+      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_middle_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_middle_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_ring_mpp_link">
+    <inertial>
+      <origin xyz="0.02435881 -0.00063526 1.69E-05" rpy="0 0 0" />
+      <mass value="0.00958776306378" />
+      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_ring_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_ring_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_ring_ip_link">
+    <inertial>
+      <origin xyz="0.02647229 0.00273686 3.99E-06" rpy="0 0 0" />
+      <mass value="0.0145740480862" />
+      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_ring_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_ring_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_little_mpp_link">
+    <inertial>
+      <origin xyz="0.02435881 -0.00063526 1.69E-05" rpy="0 0 0" />
+      <mass value="0.00958776306378" />
+      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_little_mpp_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_little_mpp_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_little_ip_link">
+    <inertial>
+      <origin xyz="0.02347382 0.00280389 6.03E-06" rpy="0 0 0" />
+      <mass value="0.0126574081908" />
+      <inertia ixx="4.66351950626e-07" ixy="-2.83142255737e-07" ixz="0" iyy="2.34841517994e-06" iyz="0" izz="2.34841517994e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_little_ip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_little_ip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_wrist_roll_link_to_L_hand_base_link" type="fixed">
+    <parent link="L_sixforce_link" />
+    <child link="L_hand_base_link" />
+    <origin xyz="0.00449793685535 0.00194909964822 -0.000588334162375" rpy="3.13670363541 0.0051498386792 3.14156752202" />
+  </joint>
+  <joint name="R_wrist_roll_link_to_R_hand_base_link" type="fixed">
+    <parent link="R_sixforce_link" />
+    <child link="R_hand_base_link" />
+    <origin xyz="-0.0022054 0.00192894317484 -0.00318463715174" rpy="3.136719213360 0.000010461957 -3.139999985662" />
+  </joint>
+  <joint name="L_palm_joint" type="fixed">
+    <origin xyz="0.003475 -0.015446 0.083916" rpy="-0.77941 -1.534 2.3499" />
+    <parent link="L_hand_base_link" />
+    <child link="L_palm_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="L_thumb_cmp_joint" type="revolute">
+    <origin xyz="-0.030696 0.0226 -0.013349" rpy="1.5449 0.082831 1.3944" />
+    <parent link="L_palm_link" />
+    <child link="L_thumb_cmp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="2.02" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_thumb_mpp_joint" type="revolute">
+    <origin xyz="0.033357 0 0" rpy="1.5708 0.088597 0" />
+    <parent link="L_thumb_cmp_link" />
+    <child link="L_thumb_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.66" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_thumb_ip_joint" type="revolute">
+    <origin xyz="0.06092 0 0" rpy="0 0 0.16446" />
+    <parent link="L_thumb_mpp_link" />
+    <child link="L_thumb_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0.98" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_index_mpp_joint" type="revolute">
+    <origin xyz="0.041904 0.036844 -0.01672" rpy="1.5703 0.20943 0.019085" />
+    <parent link="L_palm_link" />
+    <child link="L_index_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_index_ip_joint" type="revolute">
+    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
+    <parent link="L_index_mpp_link" />
+    <child link="L_index_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_middle_mpp_joint" type="revolute">
+    <origin xyz="0.045124 0.013865 -0.016635" rpy="1.5708 0.20942 0" />
+    <parent link="L_palm_link" />
+    <child link="L_middle_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_middle_ip_joint" type="revolute">
+    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
+    <parent link="L_middle_mpp_link" />
+    <child link="L_middle_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_ring_mpp_joint" type="revolute">
+    <origin xyz="0.041904 -0.0091148 -0.01672" rpy="1.5713 0.20943 -0.019085" />
+    <parent link="L_palm_link" />
+    <child link="L_ring_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_ring_ip_joint" type="revolute">
+    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
+    <parent link="L_ring_mpp_link" />
+    <child link="L_ring_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_little_mpp_joint" type="revolute">
+    <origin xyz="0.038246 -0.03197 -0.016816" rpy="1.5718 0.20944 -0.038171" />
+    <parent link="L_palm_link" />
+    <child link="L_little_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="L_little_ip_joint" type="revolute">
+    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
+    <parent link="L_little_mpp_link" />
+    <child link="L_little_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_palm_joint" type="fixed">
+    <origin xyz="0.0056084 0.015445 0.083672" rpy="-2.0937 -1.5184 0.52353" />
+    <parent link="R_hand_base_link" />
+    <child link="R_palm_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="R_thumb_cmp_joint" type="revolute">
+    <origin xyz="-0.031767 -0.021978 -0.011713" rpy="1.5448 0.089478 -1.4177" />
+    <parent link="R_palm_link" />
+    <child link="R_thumb_cmp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="2.02" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_thumb_mpp_joint" type="revolute">
+    <origin xyz="0.033358 0 0" rpy="-1.5556 -0.088599 -0.0018099" />
+    <parent link="R_thumb_cmp_link" />
+    <child link="R_thumb_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.66" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_thumb_ip_joint" type="revolute">
+    <origin xyz="0.060919 0 0" rpy="-0.014981 0.0025153 0.16633" />
+    <parent link="R_thumb_mpp_link" />
+    <child link="R_thumb_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0.98" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_index_mpp_joint" type="revolute">
+    <origin xyz="0.040215 -0.037435 -0.018869" rpy="1.5698 0.26176 -0.038653" />
+    <parent link="R_palm_link" />
+    <child link="R_index_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_index_ip_joint" type="revolute">
+    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
+    <parent link="R_index_mpp_link" />
+    <child link="R_index_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_middle_mpp_joint" type="revolute">
+    <origin xyz="0.043874 -0.014548 -0.018965" rpy="1.5703 0.26178 -0.019327" />
+    <parent link="R_palm_link" />
+    <child link="R_middle_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_middle_ip_joint" type="revolute">
+    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
+    <parent link="R_middle_mpp_link" />
+    <child link="R_middle_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_ring_mpp_joint" type="revolute">
+    <origin xyz="0.041096 0.008489 -0.018893" rpy="1.5708 0.26178 0" />
+    <parent link="R_palm_link" />
+    <child link="R_ring_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_ring_ip_joint" type="revolute">
+    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
+    <parent link="R_ring_mpp_link" />
+    <child link="R_ring_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_little_mpp_joint" type="revolute">
+    <origin xyz="0.037877 0.031411 -0.018808" rpy="1.5713 0.26178 0.019327" />
+    <parent link="R_palm_link" />
+    <child link="R_little_mpp_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
+  </joint>
+  <joint name="R_little_ip_joint" type="revolute">
+    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
+    <parent link="R_little_mpp_link" />
+    <child link="R_little_ip_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
   </joint>
   <link name="L_sixforce_link">
     <inertial>
@@ -367,213 +1574,10 @@
     </collision>
   </link>
   <joint name="L_sixforce_joint" type="fixed">
-    <origin xyz="-0.0044948 -0.0019462 -0.084379" rpy="-0.004889 0.0051472 0" />
+    <origin xyz="4.10082345277e-06 0.0830872152974 0.00199551102844" rpy="-2.11753577574 1.55851493046 2.59488749043" />
     <parent link="L_wrist_roll_link" />
     <child link="L_sixforce_link" />
     <axis xyz="0 0 0" />
-  </joint>
-  <link name="R_shoulder_pitch_link">
-    <inertial>
-      <origin xyz="0.00238 -0.05691762 -0.00139381" rpy="0 0 0" />
-      <mass value="0.96245296" />
-      <inertia ixx="0.00111" ixy="3.21E-05" ixz="-5.5E-06" iyy="0.00087902" iyz="-5.65E-06" izz="0.00115306" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_pitch_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_pitch_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_shoulder_pitch_joint" type="revolute">
-    <origin xyz="-0.0023452680737405 -0.150911910893336 0.348137625216274" rpy="-0.174531321477774 0.00487421380179817 0.000282571798509793" />
-    <parent link="waist_pitch_link" />
-    <child link="R_shoulder_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-2.8623" upper="2.8623" effort="80" velocity="3.1415926" />
-  </joint>
-  <link name="R_shoulder_roll_link">
-    <inertial>
-      <origin xyz="0.00206499 -0.00319243 -0.03740869" rpy="0 0 0" />
-      <mass value="0.54339959" />
-      <inertia ixx="0.00143692" ixy="-7.43E-06" ixz="-0.000108" iyy="0.00191196" iyz="2.31E-05" izz="0.00124589" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_roll_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_roll_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_shoulder_roll_joint" type="revolute">
-    <origin xyz="0 -0.0630000000000001 0" rpy="0 0.00162724932147512 0" />
-    <parent link="R_shoulder_pitch_link" />
-    <child link="R_shoulder_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-1.885" upper="0.1222" effort="80" velocity="3.1415926" />
-  </joint>
-  <link name="R_shoulder_yaw_link">
-    <inertial>
-      <origin xyz="0.0028177 0.0090919 -0.12862" rpy="0 0 0" />
-      <mass value="1.9947" />
-      <inertia ixx="0.015743" ixy="-4.81E-05" ixz="0.00043686" iyy="0.015629" iyz="0.00158" izz="0.002107" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_yaw_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_shoulder_yaw_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_shoulder_yaw_joint" type="revolute">
-    <origin xyz="-0.00318012282428065 -0.000942066459699908 -0.0843157353597359" rpy="0.00487351589379289 -0.00162715826838061 -0.010578831793263" />
-    <parent link="R_shoulder_roll_link" />
-    <child link="R_shoulder_yaw_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="-2.9322" upper="2.9322" effort="45" velocity="3.1415926" />
-  </joint>
-  <link name="R_elbow_roll_link">
-    <inertial>
-      <origin xyz="-0.00186194 -0.00822 -0.05886063" rpy="0 0 0" />
-      <mass value="0.68644653" />
-      <inertia ixx="0.00225908" ixy="-3.07E-06" ixz="-3.59E-05" iyy="0.00261398" iyz="-0.0003" izz="0.00143873" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_elbow_roll_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_elbow_roll_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_elbow_roll_joint" type="revolute">
-    <origin xyz="0.00261403361537579 0.0199354280921 -0.211788468669683" rpy="0 0 0.0102832062562275" />
-    <parent link="R_shoulder_yaw_link" />
-    <child link="R_elbow_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-0.0349" upper="2.6529" effort="45" velocity="3.1415926" />
-  </joint>
-  <link name="R_elbow_yaw_link">
-    <inertial>
-      <origin xyz="0.00028355 0.0009837 -0.0314705" rpy="0 0 0" />
-      <mass value="0.85820512" />
-      <inertia ixx="0.00163153" ixy="1.93E-06" ixz="1.53E-06" iyy="0.00143" iyz="5.19E-05" izz="0.00087034" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_elbow_yaw_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_elbow_yaw_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_elbow_yaw_joint" type="revolute">
-    <origin xyz="-0.00281889190175999 -0.0199074928131391 -0.119392298105422" rpy="0 0.00167860108488121 0.000287584858503629" />
-    <parent link="R_elbow_roll_link" />
-    <child link="R_elbow_yaw_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="-2.9322" upper="2.9322" effort="20" velocity="3.1415926" />
-  </joint>
-  <link name="R_wrist_pitch_link">
-    <inertial>
-      <origin xyz="0.0049237 0.0048371 -0.038455" rpy="0 0 0" />
-      <mass value="1.2811" />
-      <inertia ixx="0.0026759" ixy="2.96E-05" ixz="0.00021715" iyy="0.0026802" iyz="-0.000226" izz="0.00089277" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_wrist_pitch_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_wrist_pitch_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_wrist_pitch_joint" type="revolute">
-    <origin xyz="0.000174273799834535 0 -0.103819095437351" rpy="1.7743827638977E-05 -0.00167850730086137 -0.010570806006298" />
-    <parent link="R_elbow_yaw_link" />
-    <child link="R_wrist_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-1.658" upper="1.658" effort="20" velocity="3.1415926" />
-  </joint>
-  <link name="R_wrist_roll_link">
-    <inertial>
-      <origin xyz="0.000749 -4.63E-06 -0.01705624" rpy="0 0 0" />
-      <mass value="0.15210234" />
-      <inertia ixx="0.00011023" ixy="3E-08" ixz="-7.68E-06" iyy="0.00027356" iyz="0" izz="0.00021546" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_wrist_roll_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_wrist_roll_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_wrist_roll_joint" type="revolute">
-    <origin xyz="0 0 -0.0760000177062794" rpy="0 0 0" />
-    <parent link="R_wrist_pitch_link" />
-    <child link="R_wrist_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-2.0245" upper="2.0245" effort="20" velocity="3.1415926" />
   </joint>
   <link name="R_sixforce_link">
     <inertial>
@@ -598,1259 +1602,9 @@
     </collision>
   </link>
   <joint name="R_sixforce_joint" type="fixed">
-    <origin xyz="0.0022054 -0.0019134 -0.081806" rpy="-0.0048735 0 0" />
+    <origin xyz="6.43019676072e-06 0.0830865967243 -0.00199148256988" rpy="1.10627798199 -1.56020546924 0.464474145843" />
     <parent link="R_wrist_roll_link" />
     <child link="R_sixforce_link" />
     <axis xyz="0 0 0" />
-  </joint>
-  <link name="R_hip_roll_link">
-    <inertial>
-      <origin xyz="-0.00762458 0.00068462 -0.0092362" rpy="0 0 0" />
-      <mass value="1.32105747" />
-      <inertia ixx="0.00116343" ixy="2.521E-05" ixz="9.8E-05" iyy="0.00173588" iyz="-1.52E-05" izz="0.00186596" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_roll_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_roll_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_hip_roll_joint" type="revolute">
-    <origin xyz="0 -0.105000001492761 0" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="R_hip_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-0.7853" upper="0.4363" effort="225" velocity="8.377" />
-  </joint>
-  <link name="R_hip_yaw_link">
-    <inertial>
-      <origin xyz="-0.00045556 0.00011978 -0.07169451" rpy="0 0 0" />
-      <mass value="0.98459472" />
-      <inertia ixx="0.00268006" ixy="7.03E-06" ixz="-1.43E-05" iyy="0.00289453" iyz="3.49E-06" izz="0.00214784" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_yaw_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_yaw_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_hip_yaw_joint" type="revolute">
-    <origin xyz="0 0 -0.0364999999999999" rpy="0 0 0" />
-    <parent link="R_hip_roll_link" />
-    <child link="R_hip_yaw_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="-0.7853" upper="1.0471" effort="65" velocity="8.377" />
-  </joint>
-  <link name="R_hip_pitch_link">
-    <inertial>
-      <origin xyz="0.00152124 -0.00278426 -0.15561799" rpy="0 0 0" />
-      <mass value="4.15974037" />
-      <inertia ixx="0.04297404" ixy="8.403E-05" ixz="0.00190752" iyy="0.04280286" iyz="-0.00113" izz="0.01001625" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_pitch_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_hip_pitch_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_hip_pitch_joint" type="revolute">
-    <origin xyz="0 0 -0.0854999997030145" rpy="0 0 0" />
-    <parent link="R_hip_yaw_link" />
-    <child link="R_hip_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-1.9198" upper="0.349" effort="225" velocity="8.377" />
-  </joint>
-  <link name="R_knee_pitch_link">
-    <inertial>
-      <origin xyz="-0.00101894 -0.00103884 -0.15953291" rpy="0 0 0" />
-      <mass value="3.77343332" />
-      <inertia ixx="0.03383371" ixy="6.56E-05" ixz="-0.000889" iyy="0.03463938" iyz="0.000224" izz="0.00474523" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_knee_pitch_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_knee_pitch_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_knee_pitch_joint" type="revolute">
-    <origin xyz="0 0 -0.36" rpy="0 0 0" />
-    <parent link="R_hip_pitch_link" />
-    <child link="R_knee_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-0.0872" upper="2.2689" effort="225" velocity="8.377" />
-  </joint>
-  <link name="R_ankle_pitch_link">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.06591375" />
-      <inertia ixx="1.09E-05" ixy="0" ixz="0" iyy="1.09E-05" iyz="0" izz="1.84E-05" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_ankle_pitch_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_ankle_pitch_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_ankle_pitch_joint" type="revolute">
-    <origin xyz="0 0 -0.37" rpy="0 0 0" />
-    <parent link="R_knee_pitch_link" />
-    <child link="R_ankle_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-1.0471" upper="0.5235" effort="65" velocity="8.377" />
-  </joint>
-  <link name="R_ankle_roll_link">
-    <inertial>
-      <origin xyz="0.03391182 -3.774E-05 -0.02930864" rpy="0 0 0" />
-      <mass value="1.06156062" />
-      <inertia ixx="0.00125333" ixy="-3.14E-06" ixz="0.000346" iyy="0.00543045" iyz="1.63E-06" izz="0.00621085" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_ankle_roll_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/R_ankle_roll_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="R_ankle_roll_joint" type="revolute">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="R_ankle_pitch_link" />
-    <child link="R_ankle_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-0.5235" upper="0.5235" effort="65" velocity="8.377" />
-  </joint>
-  <link name="L_hip_roll_link">
-    <inertial>
-      <origin xyz="-0.00763564 0.0001896 -0.00925171" rpy="0 0 0" />
-      <mass value="1.32140909" />
-      <inertia ixx="0.00116526" ixy="-4.66E-06" ixz="9.792E-05" iyy="0.00173788" iyz="-8.42E-06" izz="0.00186734" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_roll_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_roll_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="L_hip_roll_joint" type="revolute">
-    <origin xyz="0 0.104999999999968 0" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="L_hip_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-0.4363" upper="0.7853" effort="225" velocity="8.377" />
-  </joint>
-  <link name="L_hip_yaw_link">
-    <inertial>
-      <origin xyz="0.00045565 -0.00106331 -0.07169187" rpy="0 0 0" />
-      <mass value="0.98440652" />
-      <inertia ixx="0.00268234" ixy="7.05E-06" ixz="1.43E-05" iyy="0.00289448" iyz="-2.71E-06" izz="0.00215016" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_yaw_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_yaw_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="L_hip_yaw_joint" type="revolute">
-    <origin xyz="0 0 -0.0365000000000002" rpy="0 0 0" />
-    <parent link="L_hip_roll_link" />
-    <child link="L_hip_yaw_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="-1.0471" upper="0.7853" effort="65" velocity="8.377" />
-  </joint>
-  <link name="L_hip_pitch_link">
-    <inertial>
-      <origin xyz="0.00184451 0.00269356 -0.15590136" rpy="0 0 0" />
-      <mass value="4.15482978" />
-      <inertia ixx="0.04303379" ixy="-6.39E-05" ixz="0.00183" iyy="0.04288387" iyz="0.00112408" izz="0.00999991" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_pitch_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_hip_pitch_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="L_hip_pitch_joint" type="revolute">
-    <origin xyz="0 0 -0.0855" rpy="0 0 0" />
-    <parent link="L_hip_yaw_link" />
-    <child link="L_hip_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-1.9198" upper="0.349" effort="225" velocity="8.377" />
-  </joint>
-  <link name="L_knee_pitch_link">
-    <inertial>
-      <origin xyz="-0.0009343 0.0010282 -0.15958543" rpy="0 0 0" />
-      <mass value="3.77348222" />
-      <inertia ixx="0.03369177" ixy="-6.85E-05" ixz="-0.000926" iyy="0.03448091" iyz="-0.000205" izz="0.00478485" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_knee_pitch_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_knee_pitch_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="L_knee_pitch_joint" type="revolute">
-    <origin xyz="0 0 -0.36" rpy="0 0 0" />
-    <parent link="L_hip_pitch_link" />
-    <child link="L_knee_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-0.0872" upper="2.2689" effort="225" velocity="8.377" />
-  </joint>
-  <link name="L_ankle_pitch_link">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.065914" />
-      <inertia ixx="1.09E-05" ixy="0" ixz="0" iyy="1.09E-05" iyz="0" izz="1.84E-05" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_ankle_pitch_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_ankle_pitch_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="L_ankle_pitch_joint" type="revolute">
-    <origin xyz="0 0 -0.37" rpy="0 0 0" />
-    <parent link="L_knee_pitch_link" />
-    <child link="L_ankle_pitch_link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-1.0471" upper="0.5235" effort="65" velocity="8.377" />
-  </joint>
-  <link name="L_ankle_roll_link">
-    <inertial>
-      <origin xyz="0.034412 -3.77E-05 -0.029309" rpy="0 0 0" />
-      <mass value="1.0616" />
-      <inertia ixx="0.00125" ixy="-3.14E-06" ixz="0.000346" iyy="0.00543" iyz="1.63E-06" izz="0.00621" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_ankle_roll_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/s2_v1_simple/L_ankle_roll_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="L_ankle_roll_joint" type="revolute">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="L_ankle_pitch_link" />
-    <child link="L_ankle_roll_link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-0.5235" upper="0.5235" effort="65" velocity="8.377" />
-  </joint>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-<joint name="L_wrist_roll_link_to_L_hand_base_link" type="fixed">
-    <parent link="L_sixforce_link" />
-    <child link="L_hand_base_link" />
-    <origin xyz="0.00449793685535 0.00194909964822 -0.000588334162375" rpy="3.13670363541 0.0051498386792 3.14156752202" />
-  </joint>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-<joint name="R_wrist_roll_link_to_R_hand_base_link" type="fixed">
-    <parent link="R_sixforce_link" />
-    <child link="R_hand_base_link" />
-    <origin xyz="-0.0022054 0.00192894317484 -0.00318463715174" rpy="3.136719213360 0.000010461957 -3.139999985662" />
-  </joint>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  <link name="L_hand_base_link">
-    <inertial>
-      <origin xyz="0.0001049 0.00078529 0.01739669" rpy="0 0 0" />
-      <mass value="0.0507285826538" />
-      <inertia ixx="1.56394457728e-05" ixy="-3.33108536162e-08" ixz="-8.6608219402e-07" iyy="3.53927819672e-05" iyz="-3.33108536162e-07" izz="4.32374879938e-05" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_hand_base_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_hand_base_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_palm_link">
-    <inertial>
-      <origin xyz="0.01623237 0.00522261 -0.02161192" rpy="0 0 0" />
-      <mass value="0.489030929127" />
-      <inertia ixx="0.00030780894284" ixy="3.04794310588e-06" ixz="1.12424130955e-05" iyy="0.000498563546073" iyz="-2.81476713057e-06" izz="0.000750743363374" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_palm_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_palm_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_thumb_cmp_link">
-    <inertial>
-      <origin xyz="0.02421698 0.01048091 -0.00295563" rpy="0 0 0" />
-      <mass value="0.00695715498743" />
-      <inertia ixx="2.16520548505e-07" ixy="-9.99325608485e-08" ixz="-1.33243414465e-07" iyy="7.8280505998e-07" iyz="-1.66554268081e-08" izz="6.32906218707e-07" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_cmp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_cmp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_thumb_mpp_link">
-    <inertial>
-      <origin xyz="0.03033559 -0.00049293 0.00158431" rpy="0 0 0" />
-      <mass value="0.17141826896" />
-      <inertia ixx="1.3540861995e-05" ixy="-1.53896143707e-05" ixz="1.66554268081e-07" iyy="0.000121917724235" iyz="0" izz="0.000126831075144" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_thumb_ip_link">
-    <inertial>
-      <origin xyz="0.02836755 0.00260015 4.46E-05" rpy="0 0 0" />
-      <mass value="0.00213445956716" />
-      <inertia ixx="1.33243414465e-07" ixy="4.99662804243e-08" ixz="0" iyy="1.16587987657e-07" iyz="0" izz="1.16587987657e-07" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_thumb_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_index_mpp_link">
-    <inertial>
-      <origin xyz="0.02435881 -0.00063526 -1.69E-05" rpy="0 0 0" />
-      <mass value="0.00958776306378" />
-      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_index_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_index_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_index_ip_link">
-    <inertial>
-      <origin xyz="0.02647229 0.00273686 -3.99E-06" rpy="0 0 0" />
-      <mass value="0.0145740480862" />
-      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_index_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_index_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_middle_mpp_link">
-    <inertial>
-      <origin xyz="0.02435881 -0.00063526 -1.69E-05" rpy="0 0 0" />
-      <mass value="0.00958776306378" />
-      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_middle_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_middle_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_middle_ip_link">
-    <inertial>
-      <origin xyz="0.02647229 0.00273686 -3.99E-06" rpy="0 0 0" />
-      <mass value="0.0145740480862" />
-      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_middle_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_middle_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_ring_mpp_link">
-    <inertial>
-      <origin xyz="0.02435881 -0.00063526 -1.69E-05" rpy="0 0 0" />
-      <mass value="0.00958776306378" />
-      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_ring_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_ring_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_ring_ip_link">
-    <inertial>
-      <origin xyz="0.02647229 0.00273686 -3.99E-06" rpy="0 0 0" />
-      <mass value="0.0145740480862" />
-      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_ring_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_ring_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_little_mpp_link">
-    <inertial>
-      <origin xyz="0.02435881 -0.00063526 -1.69E-05" rpy="0 0 0" />
-      <mass value="0.00958776306378" />
-      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_little_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_little_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="L_little_ip_link">
-    <inertial>
-      <origin xyz="0.02347382 0.00280389 -6.03E-06" rpy="0 0 0" />
-      <mass value="0.0126574081908" />
-      <inertia ixx="4.66351950626e-07" ixy="-2.83142255737e-07" ixz="0" iyy="2.34841517994e-06" iyz="0" izz="2.34841517994e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_little_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/L_little_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="L_palm_joint" type="fixed">
-    <origin xyz="0.003475 -0.015446 0.083916" rpy="-0.77941 -1.534 2.3499" />
-    <parent link="L_hand_base_link" />
-    <child link="L_palm_link" />
-    <axis xyz="0 0 0" />
-  </joint>
-
-  <joint name="L_thumb_cmp_joint" type="revolute">
-    <origin xyz="-0.030696 0.0226 -0.013349" rpy="1.5449 0.082831 1.3944" />
-    <parent link="L_palm_link" />
-    <child link="L_thumb_cmp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="2.02" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_thumb_mpp_joint" type="revolute">
-    <origin xyz="0.033357 0 0" rpy="1.5708 0.088597 0" />
-    <parent link="L_thumb_cmp_link" />
-    <child link="L_thumb_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.66" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_thumb_ip_joint" type="revolute">
-    <origin xyz="0.06092 0 0" rpy="0 0 0.16446" />
-    <parent link="L_thumb_mpp_link" />
-    <child link="L_thumb_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="0.98" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_index_mpp_joint" type="revolute">
-    <origin xyz="0.041904 0.036844 -0.01672" rpy="1.5703 0.20943 0.019085" />
-    <parent link="L_palm_link" />
-    <child link="L_index_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_index_ip_joint" type="revolute">
-    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
-    <parent link="L_index_mpp_link" />
-    <child link="L_index_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_middle_mpp_joint" type="revolute">
-    <origin xyz="0.045124 0.013865 -0.016635" rpy="1.5708 0.20942 0" />
-    <parent link="L_palm_link" />
-    <child link="L_middle_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_middle_ip_joint" type="revolute">
-    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
-    <parent link="L_middle_mpp_link" />
-    <child link="L_middle_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_ring_mpp_joint" type="revolute">
-    <origin xyz="0.041904 -0.0091148 -0.01672" rpy="1.5713 0.20943 -0.019085" />
-    <parent link="L_palm_link" />
-    <child link="L_ring_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_ring_ip_joint" type="revolute">
-    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
-    <parent link="L_ring_mpp_link" />
-    <child link="L_ring_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_little_mpp_joint" type="revolute">
-    <origin xyz="0.038246 -0.03197 -0.016816" rpy="1.5718 0.20944 -0.038171" />
-    <parent link="L_palm_link" />
-    <child link="L_little_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="L_little_ip_joint" type="revolute">
-    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
-    <parent link="L_little_mpp_link" />
-    <child link="L_little_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <link name="R_hand_base_link">
-    <inertial>
-      <origin xyz="0.0001049 -0.00078529 0.01739669" rpy="0 0 0" />
-      <mass value="0.0507285826538" />
-      <inertia ixx="1.56394457728e-05" ixy="3.33108536162e-08" ixz="-8.6608219402e-07" iyy="3.53927819672e-05" iyz="3.33108536162e-07" izz="4.32374879938e-05" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_hand_base_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_hand_base_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_palm_link">
-    <inertial>
-      <origin xyz="0.01623237 -0.00522261 -0.02161192" rpy="0 0 0" />
-      <mass value="0.489030929127" />
-      <inertia ixx="0.00030780894284" ixy="-3.04794310588e-06" ixz="1.12424130955e-05" iyy="0.000498563546073" iyz="2.81476713057e-06" izz="0.000750743363374" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_palm_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_palm_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_thumb_cmp_link">
-    <inertial>
-      <origin xyz="0.02421698 0.01048091 0.00295563" rpy="0 0 0" />
-      <mass value="0.00695715498743" />
-      <inertia ixx="2.16520548505e-07" ixy="-9.99325608485e-08" ixz="1.33243414465e-07" iyy="7.8280505998e-07" iyz="1.66554268081e-08" izz="6.32906218707e-07" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_cmp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_cmp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_thumb_mpp_link">
-    <inertial>
-      <origin xyz="0.03033559 -0.00049293 -0.00158431" rpy="0 0 0" />
-      <mass value="0.17141826896" />
-      <inertia ixx="1.3540861995e-05" ixy="-1.53896143707e-05" ixz="-1.66554268081e-07" iyy="0.000121917724235" iyz="0" izz="0.000126831075144" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_thumb_ip_link">
-    <inertial>
-      <origin xyz="0.02836755 0.00260015 -4.46E-05" rpy="0 0 0" />
-      <mass value="0.00213445956716" />
-      <inertia ixx="1.33243414465e-07" ixy="4.99662804243e-08" ixz="0" iyy="1.16587987657e-07" iyz="0" izz="1.16587987657e-07" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_thumb_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_index_mpp_link">
-    <inertial>
-      <origin xyz="0.02435881 -0.00063526 1.69E-05" rpy="0 0 0" />
-      <mass value="0.00958776306378" />
-      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_index_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_index_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_index_ip_link">
-    <inertial>
-      <origin xyz="0.02647229 0.00273686 3.99E-06" rpy="0 0 0" />
-      <mass value="0.0145740480862" />
-      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_index_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_index_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_middle_mpp_link">
-    <inertial>
-      <origin xyz="0.02435881 -0.00063526 1.69E-05" rpy="0 0 0" />
-      <mass value="0.00958776306378" />
-      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_middle_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_middle_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_middle_ip_link">
-    <inertial>
-      <origin xyz="0.02647229 0.00273686 3.99E-06" rpy="0 0 0" />
-      <mass value="0.0145740480862" />
-      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_middle_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_middle_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_ring_mpp_link">
-    <inertial>
-      <origin xyz="0.02435881 -0.00063526 1.69E-05" rpy="0 0 0" />
-      <mass value="0.00958776306378" />
-      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_ring_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_ring_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_ring_ip_link">
-    <inertial>
-      <origin xyz="0.02647229 0.00273686 3.99E-06" rpy="0 0 0" />
-      <mass value="0.0145740480862" />
-      <inertia ixx="5.49629084667e-07" ixy="-3.83074816586e-07" ixz="0" iyy="3.33108536162e-06" iyz="0" izz="3.34774078842e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_ring_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_ring_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_little_mpp_link">
-    <inertial>
-      <origin xyz="0.02435881 -0.00063526 1.69E-05" rpy="0 0 0" />
-      <mass value="0.00958776306378" />
-      <inertia ixx="7.8280505998e-07" ixy="-6.66217072323e-08" ixz="0" iyy="2.66486828929e-06" iyz="0" izz="2.59824658206e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_little_mpp_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_little_mpp_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="R_little_ip_link">
-    <inertial>
-      <origin xyz="0.02347382 0.00280389 6.03E-06" rpy="0 0 0" />
-      <mass value="0.0126574081908" />
-      <inertia ixx="4.66351950626e-07" ixy="-2.83142255737e-07" ixz="0" iyy="2.34841517994e-06" iyz="0" izz="2.34841517994e-06" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_little_ip_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://walker_s2_all/meshes/ee_hand_v4_simple/R_little_ip_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="R_palm_joint" type="fixed">
-    <origin xyz="0.0056084 0.015445 0.083672" rpy="-2.0937 -1.5184 0.52353" />
-    <parent link="R_hand_base_link" />
-    <child link="R_palm_link" />
-    <axis xyz="0 0 0" />
-  </joint>
-
-  <joint name="R_thumb_cmp_joint" type="revolute">
-    <origin xyz="-0.031767 -0.021978 -0.011713" rpy="1.5448 0.089478 -1.4177" />
-    <parent link="R_palm_link" />
-    <child link="R_thumb_cmp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="2.02" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_thumb_mpp_joint" type="revolute">
-    <origin xyz="0.033358 0 0" rpy="-1.5556 -0.088599 -0.0018099" />
-    <parent link="R_thumb_cmp_link" />
-    <child link="R_thumb_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.66" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_thumb_ip_joint" type="revolute">
-    <origin xyz="0.060919 0 0" rpy="-0.014981 0.0025153 0.16633" />
-    <parent link="R_thumb_mpp_link" />
-    <child link="R_thumb_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="0.98" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_index_mpp_joint" type="revolute">
-    <origin xyz="0.040215 -0.037435 -0.018869" rpy="1.5698 0.26176 -0.038653" />
-    <parent link="R_palm_link" />
-    <child link="R_index_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_index_ip_joint" type="revolute">
-    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
-    <parent link="R_index_mpp_link" />
-    <child link="R_index_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_middle_mpp_joint" type="revolute">
-    <origin xyz="0.043874 -0.014548 -0.018965" rpy="1.5703 0.26178 -0.019327" />
-    <parent link="R_palm_link" />
-    <child link="R_middle_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_middle_ip_joint" type="revolute">
-    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
-    <parent link="R_middle_mpp_link" />
-    <child link="R_middle_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_ring_mpp_joint" type="revolute">
-    <origin xyz="0.041096 0.008489 -0.018893" rpy="1.5708 0.26178 0" />
-    <parent link="R_palm_link" />
-    <child link="R_ring_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_ring_ip_joint" type="revolute">
-    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
-    <parent link="R_ring_mpp_link" />
-    <child link="R_ring_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_little_mpp_joint" type="revolute">
-    <origin xyz="0.037877 0.031411 -0.018808" rpy="1.5713 0.26178 0.019327" />
-    <parent link="R_palm_link" />
-    <child link="R_little_mpp_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
-  </joint>
-
-  <joint name="R_little_ip_joint" type="revolute">
-    <origin xyz="0.046657 0 0" rpy="0 0 0.2356" />
-    <parent link="R_little_mpp_link" />
-    <child link="R_little_ip_link" />
-    <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57078" effort="1.35" velocity="2.409" />
   </joint>
 </robot>
